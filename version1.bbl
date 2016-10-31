@@ -1,0 +1,306 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{papereducacion3}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BMdSS}{%
+         family={Brito},
+         familyi={B\bibinitperiod},
+         given={M.\bibnamedelima de Sá-Soares.},
+         giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod
+  S\bibinitperiod-S\bibinitperiod},
+      }}%
+    }
+    \keyw{Assessment frequency,Computer
+  programming,Constructivism,Learning,Novice students,Programming education}
+    \strng{namehash}{BMdSS1}
+    \strng{fullhash}{BMdSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{issn}{07475632}
+    \field{pages}{623\bibrangedash 628}
+    \field{title}{Assessment frequency in introductory computer programming
+  disciplines}
+    \verb{url}
+    \verb http://fulltext.study/preview/pdf/350717.pdf
+    \endverb
+    \field{journaltitle}{Computers in Human Behavior}
+    \field{year}{2014}
+  \endentry
+
+  \entry{edile}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=E}{%
+         family={{EDILE project}},
+         familyi={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{E1}
+    \strng{fullhash}{E1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{EDILE Python Editor}
+    \verb{url}
+    \verb https://code.google.com/archive/p/edile/
+    \endverb
+  \endentry
+
+  \entry{bibpython}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=E}{%
+         family={{Ernesto Gigliotti}},
+         familyi={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{E2}
+    \strng{fullhash}{E2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{Documentación de bibliotecas Python para la EDU-CIAA-NXP.}
+    \verb{url}
+    \verb http://www.proyecto-ciaa.com.ar/devwiki/doku.php?id=desarrollo:edu-ci
+    \verb aa:edu-ciaa-nxp:python:bibliotecas
+    \endverb
+  \endentry
+
+  \entry{repoejemplos}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=E}{%
+         family={{Ernesto Gigliotti}},
+         familyi={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{E2}
+    \strng{fullhash}{E2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{Proyectos de ejemplo utilizando Micropython en la
+  EDU-CIAA-NXP.}
+    \verb{url}
+    \verb https://github.com/ernesto-g/educiaa-micropython-demos
+    \endverb
+  \endentry
+
+  \entry{papereducacion}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GMMDMPDRR}{%
+         family={García-Martínez},
+         familyi={G\bibinitperiod-M\bibinitperiod},
+         given={Mauricio Dávila. Marisa Panizzi. Darío
+  Rodríguez.\bibnamedelima Ramón},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod M\bibinitperiod
+  P\bibinitperiod D\bibinitperiod R\bibinitperiod\bibinitdelim
+  R\bibinitperiod},
+      }}%
+    }
+    \keyw{Algorítmia, Dispositivos de Enseñanza, Protocolo de Análisis.}
+    \strng{namehash}{GMMDMPDRR1}
+    \strng{fullhash}{GMMDMPDRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{isbn}{978-987-3977-30-5}
+    \field{pages}{428\bibrangedash 437}
+    \field{title}{Propuesta de Protocolo de Análisis de Dispositivos de
+  Enseñanza de Programación}
+    \verb{url}
+    \verb http://sistemas.unla.edu.ar/sistemas/gisi/papers/TEYET-2016-MD-MP-DR-
+    \verb RGM-TeE.pdf
+    \endverb
+    \field{journaltitle}{Proceedings XI Congreso de Tecnología en Educación y
+  Educación en Tecnología}
+    \field{month}{06}
+    \field{year}{2016}
+  \endentry
+
+  \entry{glade}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Glade}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{A User Interface Designer.}
+    \verb{url}
+    \verb https://glade.gnome.org
+    \endverb
+  \endentry
+
+  \entry{tdd}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GJW}{%
+         family={Grenning},
+         familyi={G\bibinitperiod},
+         given={James\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJW1}
+    \strng{fullhash}{GJW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{isbn}{978-1-934356-62-3}
+    \field{pages}{116\bibrangedash 119}
+    \field{title}{Test-Driven Development for embedded C}
+    \field{year}{2011}
+  \endentry
+
+  \entry{papereducacion2}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HLCKJPEERPGL}{%
+         family={Herman.},
+         familyi={H\bibinitperiod},
+         given={Lisa C. Kaczmarczyk. J. Philip East. Elizabeth R. Petrick.
+  Geoffrey\bibnamedelima L.},
+         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod K\bibinitperiod
+  J\bibinitperiod P\bibinitperiod E\bibinitperiod E\bibinitperiod
+  R\bibinitperiod P\bibinitperiod G\bibinitperiod\bibinitdelim
+  L\bibinitperiod},
+      }}%
+    }
+    \keyw{Curriculum, Concept Inventory, Programming, Misconceptions,Pedagogy,
+  CS1.}
+    \strng{namehash}{HLCKJPEERPGL1}
+    \strng{fullhash}{HLCKJPEERPGL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{pages}{107\bibrangedash 111}
+    \field{title}{Identifying Student Misconceptions of Programming}
+    \verb{url}
+    \verb http://publish.illinois.edu/glherman/files/2016/03/2010-SIGCSE-Progra
+    \verb mming-Misconceptions.pdf
+    \endverb
+    \field{journaltitle}{SIGCSE '10 Proceedings of the 41st ACM technical
+  symposium on Computer science education.}
+    \field{year}{2010}
+  \endentry
+
+  \entry{jaltek}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=J}{%
+         family={{Jaltek Systems}},
+         familyi={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{J1}
+    \strng{fullhash}{J1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{Jaltek Systems Web Page}
+    \verb{url}
+    \verb http://www.jaltek.com
+    \endverb
+  \endentry
+
+  \entry{papereducacion4}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KRMMJMHARNEEBK}{%
+         family={Kafai},
+         familyi={K\bibinitperiod},
+         given={Resnick M. Maloney J. Monroy-Hernández A. Rusk N. Eastmond E.
+  Brennan\bibnamedelima K.},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod M\bibinitperiod
+  J\bibinitperiod M\bibinitperiod-H\bibinitperiod A\bibinitperiod
+  R\bibinitperiod N\bibinitperiod E\bibinitperiod E\bibinitperiod
+  B\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KRMMJMHARNEEBK1}
+    \strng{fullhash}{KRMMJMHARNEEBK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{60\bibrangedash 67}
+    \field{title}{Scratch: programming for all.}
+    \verb{url}
+    \verb http://cacm.acm.org/magazines/2009/11/48421-scratch-programming-for-a
+    \verb ll/fulltext
+    \endverb
+    \field{journaltitle}{Communications of the ACM}
+    \field{year}{2009}
+  \endentry
+
+  \entry{portmicropythonribelotta}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Martin Ribelotta}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{Port de MicroPython para la EDU-CIAA-NXP}
+    \verb{url}
+    \verb https://github.com/martinribelotta/micropython
+    \endverb
+  \endentry
+
+  \entry{micropython}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{MicroPython}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M2}
+    \strng{fullhash}{M2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{MicroPython - Python for microcontrollers}
+    \verb{url}
+    \verb https://micropython.org
+    \endverb
+  \endentry
+\endsortlist
+\endinput

@@ -1,0 +1,318 @@
+% Chapter Template
+
+\chapter{Ensayos y Resultados} % Main chapter title
+En este capitulo se explicara el desarrollo e implementacion de tests unitarios y funcionales para el firmware y el software.
+
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Tests unitarios para bibliotecas para el manejo de periféricos desde C}
+\label{sec:testUnitariosC}
+
+Para asegurar el correcto funcionamiento de las bibliotecas para el manejo de perifericos, se implementaron tests unitarios para la capa uPython HAL. Mediante estos tests se pretendio probar el uso de las funciones de dicha capa cubriendo la complejidad ciclomatica de cada una de ellas.
+
+Teniendo como principal objetivo un consumo reducido de memoria de datos y de programa para la implementacion de los tests (debido a que se pretendio que se ejecuten en la propia placa sin utilizar mocks), no se utilizo ninguna biblioteca existente, sino que se desarrollo una pequenia biblioteca mayormente compuesta por macros, que permitio ejecutar los tests unitarios de una manera simple y controlada.
+
+
+\begin{lstlisting}[label={lst:utest},caption=Función que ejecuta un test unitario incluida en el archivo utest.c del firmware.]
+void utest_startTest(void(*fncTest)(void),
+                     void(*fncBefore)(void),
+                     char* testName)
+{
+	if(fncTest!=0)
+	{
+		utest_flagTestError=0;
+		utest_print1("TESTING:%s\r\n",testName);
+		if(fncBefore!=0)
+			fncBefore();
+		utest_totalTestsCounter++;
+		fncTest();
+		if(utest_flagTestError==1)
+		{
+			utest_print2("TEST FAILED. FILE:%s LINE:%d\r\n",
+			              utest_fileTestError,utest_lineTestError);
+		}
+		else
+		{
+			utest_okTestsCounter++;
+		}
+	}
+} 
+\end{lstlisting}
+
+En el algotimo \ref{lst:utest} se muestra la funcion utest\_startTest la cual se encarga de ejecutar un test unitario. La misma recibe los argumentos que se detallan a continuacion:
+
+\begin{itemize}
+	\item \textbf{fncTest} : Una funcion donde se escribira el test unitario.
+	\item \textbf{fncBefore} : Una funcion que en el caso de existir, se ejecutara antes fncTest (puede utilizarse para inicializaciones antes de la ejecucion del test).
+	\item \textbf{testName} : Un texto con el nombre del test, el cual se imprime antes de ejecutar las funciones (linea 8).	
+\end{itemize}
+	
+El control de errores se observa en la linea 7 en donde se pone a cero la variable global utest\_flagTestError, luego de la ejecucion de las funciones pasadas como argumento, en la linea 13 se evalua el estado de dicha variable, la cual se pudo cargar con el valor 1 en la funcion del test si hubo un error. En dicho caso se imprime un mensaje de error (linea 15) indicando mediante otras variables globales el nombre del archivo y el numero de linea donde se produjo el error en el test.
+
+Las variables globales mencionadas previamente se cargan en la ejecucion de la funcion de test, para ello en el archivo utest.h del firmware, se definieron una serie de macros que permiten ejecutar las comparaciones de valores (asserts) del test unitario.
+
+\begin{lstlisting}[label={lst:utestmacro},caption=Ejemplo de una macro assert incluida en el archivo utest.h del firmware.]
+
+#define utest_assertEqualsInt(A,B)	
+{ 
+	if(A!=B)
+	{ 
+		utest_print2("assert equals failed '%d' != '%d'\r\n",A,B); 
+		utest_flagTestError=1; 
+		utest_lineTestError = __LINE__;  
+		utest_fileTestError = __FILE__;return; 
+	} 
+}
+\end{lstlisting}
+
+En el algoritmo \ref{lst:utestmacro} se observa una de las macros definidas la cual es utilizada para comparar dos numeros enteros. En la linea 4 se realiza la comparacion de los valores y en el caso de que no sean iguales se imprime un mensaje de error (linea 6) y se cargan las variables globales que son analizadas en la funcion utest\_startTest.
+
+\begin{lstlisting}[label={lst:testeeprom},caption=Ejemplo de un test unitario para la EEPROM usando una direccion invalida.]
+void testEEPROM2(void)
+{
+	int32_t r = mp_hal_writeByteEEPROM(0x8000,0x55); // invalid address
+	utest_assertEqualsInt(-1,(int)r);
+}
+\end{lstlisting}
+
+En el algoritmo \ref{lst:testeeprom} puede apreciarse el uso de la macro utest\_assertEqualsInt la cual recibe el valor esperado (-1) y el valor devuelto por la funcion de la capa uPython HAL que escribe en la EEPROM. Esta funcion es uno de los tests unitarios escritos para el manejo de la EEPROM del microcontrolador. La macro realiza la comparacion, y en caso de error, imprime el mensaje y carga las variables globales.
+
+\begin{lstlisting}[label={lst:testmain},caption=Ejemplo de ejecucion de funciones de test en archivo mainTest.c.]
+	utest_startTest(testEEPROM1,0,"EEPROM: write/read byte Test");
+	utest_startTest(testEEPROM2,0,"EEPROM: write invalid address Test");
+	utest_startTest(testEEPROM3,0,"EEPROM: read invalid address Test");
+\end{lstlisting}
+
+Para ejecutar la funcion testEEPROM2 asi como el resto de las funciones de test para todos los perifericos, se definio el archivo mainTest.c, en el cual se ejecutan las llamadas a la funcion utest\_startTest mencionada en el algoritmo \ref{lst:utest} y en donde se colocaron lineas de codigo como la que se observa en el algoritmo \ref{lst:testmain} en una funcion llamada startTesting la cual se ejecuta en el main principal del firmware en el caso de que se compile para ejecutar los tests (ver seccion \ref{sec:testUnitariosPlaca}).
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.7\textwidth]{Figures/fig_utests_c}
+  \caption{Estructura de archivos para la ejecucion de tests unitarios de la capa uPython HAL.}
+  \label{fig:utestcarq}
+\end{figure}
+
+La estructura de archivos referidos a los tests se muestra en la figura \ref{fig:utestcarq}. Los archivos llamados testsXXX.c poseen las funciones de cada test unitario referido a cada periferico, las cuales utilizan las macros definidas en utest.h para realizar las comparaciones (asserts). Todos estos archivos se encuentran dentro de una carpeta llamada testing, y los mismos no se incluyen en el firmware excepto que se compile el mismo para ejecutar los tests.
+
+\section{Test unitarios para bibliotecas para el manejo de periféricos desde Python}
+\label{sec:testUnitariosPython}
+
+Para asegurar el correcto funcionamiento de las bibliotecas para el manejo de pe-
+rifericos desde Python, se implementaron tests unitarios para todas las clases Python desarrolladas. Mediante estos tests se pretendio probar el uso de los metodos de dicha capa cubriendo la
+complejidad ciclomatica de cada una de ellos.
+
+Una vez mas teniendo como principal objetivo un consumo reducido de memoria de datos y de programa para la implementacion de los tests, no se utilizo ninguna biblioteca de tests unitarios para Python, sino que se escribio una que posea lo minimo indispensable para la ejecucion de los tests, en un modulo llamado unittest. 
+
+Este modulo forma parte de las bibliotecas Python que pueden escribirse directamente en Python y no en C (bloque Frozen, ver seccion \ref{sec:firmwareArq}), e incorporarse al firmware y al conjunto de modulos que el usuario puede utilizar para programar Python.
+
+\begin{lstlisting}[label={lst:testcase},caption=Clase TestCase utilizada para crear tests unitarios para Python., language={python}]
+class TestCase (object):
+    testCounter=0
+    testOKCounter=0
+
+    def setUp(self):
+        pass
+    
+    def tearDown(self):
+        pass
+
+    def assertEqual(self,v1,v2,m):
+        if v1 != v2:
+            raise TestException(m)
+\end{lstlisting}
+
+En esta biblioteca se definio la clase TestCase, una parte de ella puede observarse en el algoritmo \ref{lst:testcase} en donde se muestra la definicion de la clase y de los metodos:
+
+\begin{itemize}
+	\item \textbf{setUp} : Metodo que se ejecutara antes del metodo de test.
+	\item \textbf{tearDown} : Metodo que se ejecutara despues del metodo de test.
+	\item \textbf{assertEqual} : 	Metodo assert encargado de comparar dos valores por igual.En el caso de no ser iguales, se lanza una excepcion que sera capturada por el metodo que ejecuta los tests.
+\end{itemize}
+
+La clase posee muchos mas metodos assertXXX para poder comparar todo tipo de datos.
+
+Para escribir un test, se debe crear una clase que herede de TestCase, en donde se deben definir los metodos test\_X siendo X un numero comenzando de 1.
+
+\begin{lstlisting}[label={lst:testpyeeprom},caption=Clase que hereda de TestCase donde se definen los metodos de test para la EEPROM., language={python}]
+from unittest import TestCase
+import pyb
+  
+class TestEEPROM (TestCase):
+
+    def test_1(self):
+        eeprom = pyb.EEPROM()
+        eeprom.write_byte(0x0000,0x55)
+        val = eeprom.read_byte(0x0000)
+        self.assertEqual(0x55,val,"EEPROM addr 0x0000")       
+\end{lstlisting}
+
+En el algoritmo \ref{lst:testpyeeprom} se muestra un ejemplo de una clase TestEEPROM la cual hereda de TestCase y posee definido los metodos de los tests, en el ejemplo se muestra solo el metodo test\_1, el cual hace uso del metodo assertEqual, esto es posible debido a que la clase hereda de TestCase donde se encuentra definido el metodo.
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.7\textwidth]{Figures/fig_unittest_class_diagram}
+  \caption{Diagrama de clases del modulo unittest.}
+  \label{fig:unittestpythonclassd}
+\end{figure}
+
+En la figura \ref{fig:unittestpythonclassd} el diagrama de clases del modulo unittest muestra la clase TestCase con todos sus metodos assertXXX y como las clases donde se definen los test (TestXXX) deben heredar de TestCase e implementar los metodos test\_X como lo hace TestEEPROM.
+
+\begin{lstlisting}[label={lst:utestsrun},caption=Metodo que ejecuta los metodos de test en la biblioteca unittest.py implementada., language={python}]
+@staticmethod
+def run(o):
+		i=1
+		while True:
+				mName = "test_"+str(i)
+				if hasattr(o,mName):
+						m = getattr(o,mName)
+						print("Testing "+mName+" ... ")
+						TestCase.testCounter+=1
+						try:
+								o.setUp()
+								m()
+								o.tearDown()
+								TestCase.testOKCounter+=1
+						except Exception as e:
+								print("ASSERT ERROR:"+str(e))
+				else:
+						break
+				i+=1
+\end{lstlisting}
+
+Para ejecutar los tests, se utiliza el metodo estatico run, el cual debe recibir un objeto creado a partir de una clase que herede de TestCase y que posea los metodos test\_X.
+
+El metodo estatico run, encargado de ejecutar los tests unitarios, puede apreciarse en el algoritmo \ref{lst:utestsrun}, en donde se observa que el mismo recibe un objeto y mediante el metodo hasattr (linea 6) se consulta si el mismo posee el metodo llamado nName (variable que contiene un string con el formato test\_X). En el caso de que el objeto posea el metodo, se obtiene dicho metodo mediante getattr (linea 7) y dentro de un bloque try-except se procede a la ejecucion del mismo (linea 12) ejecutando previamente el metodo setUp y tearDown.
+
+Si dentro de la ejecucion del metodo m() un assert falla, se lanzara una excepcion, como se muestra en el algoritmo \ref{lst:testcase} en dicho caso el bloque try-except capturara la excepcion y se imprimira el mensaje de error.
+
+\begin{lstlisting}[label={lst:maintestpython},caption=Clase MainTest desde donde se ejecutan todos los tests Python., language={python}]
+class MainTest (object):
+
+    def run(self):
+        print("Running python tests")
+
+        print("LEDs Tests")
+        TestCase.run(TestLeds())
+        print("____________________")
+
+        print("Switches Tests")
+        TestCase.run(TestSwitches())
+        print("____________________")
+				#...
+
+\end{lstlisting}
+ 
+En el algoritmo \ref{lst:maintestpython} se observa la definicion de una clase MainTest la cual posee un metodo run y dentro del mismo se colocaron todas las llamadas al metodo run de la clase TestCase, pasando como argumento un objeto de cada una de las clases que hereda de TestCase, de las cuales se creo una para cada periferico y se listan a continuacion:
+
+\begin{itemize}
+	\item \textbf{TestLeds}
+	\item \textbf{TestSwitches}
+	\item \textbf{TestUart}
+	\item \textbf{TestEEPROM}
+	\item \textbf{TestDAC}
+	\item \textbf{TestADC}
+	\item \textbf{TestGPIO}
+	\item \textbf{TestRS485}	
+	\item \textbf{TestTimers}
+\end{itemize}
+
+La ejecucion del metodo run de esta clase asi como la ejecucion de los tests escritos en C se explican en la seccion \ref{sec:testUnitariosPlaca}.
+
+\section{Ejecucion de los tests sobre la placa}
+\label{sec:testUnitariosPlaca}
+
+Para llevar a cabo la ejecucion de los tests unitarios sobre la placa, se modifico el archivo Makefile agregando la regla "`test"'. 
+
+\begin{lstlisting}[label={lst:makefile},caption=Regla test en Makefile.]
+test: CFLAGS += -DTESTING
+test: export MP_INCLUDE_TESTS = true
+test: all 
+\end{lstlisting}
+
+Como se indica en el algoritmo \ref{lst:makefile} la regla test incluye en la compilacion la definicion de la macro TESTING (linea 1) y la definicion de una variable de entorno MP\_INCLUDE\_TESTS (linea 2).
+
+\begin{lstlisting}[label={lst:mainc},caption=Inclusion de los archivos de test en el main.]
+#ifdef TESTING
+    #include "testing/mainTest.c"
+    #include "testing/pythonTest.c" // do_str function
+#endif
+//...
+int main(int argc, char **argv) {
+	//...
+	#ifdef TESTING
+			// Run C tests
+			startTesting();
+			// Run Python tests
+			do_str("import testing_MainTest\r\n
+			        m=testing_MainTest.MainTest()\r\n
+							m.run()\r\n\0",MP_PARSE_FILE_INPUT);
+			return 0;
+	#endif
+	//...
+}
+\end{lstlisting}
+
+La defincion TESTING se utiliza en el archivo main.c como se observa en el algoritmo \ref{lst:mainc} para incluir todos los archivos mencionados en las secciones anteriores, e incluir las llamadas a la funcion startTesting (linea 10), para ejecutar los tests unitarios para la capa uPython HAL, y la funcion do\_str (linea 12) para ejecutar una porcion de codigo Python que crea un objeto MainTest y ejecuta el metodo run de dicha clase, iniciando asi la ejecucion de todos los test unitarios escritos en Python.
+
+Para compilar el firmware habilitando la ejecucion de los tests, simplemente se ejecuta:
+
+\textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{make test}\\
+
+La variable de entorno MP\_INCLUDE\_TESTS sirve para que el script que genera codigo C a partir del codigo Python escrito como Frozen, incluya las clases de test escritas en Python, de lo contrario estas clases no se incluyen en el firmware, para minimizar el tamaño de la memoria requerida.
+
+\subsection{Requerimientos para la ejecucion de los tests.}
+\label{sec:requerimientosEjecucionTests}
+
+Los tests desarrollados no fueron pensados para probar el hardware sino el firmware, esto quiere decir que es un requerimiento necesario que los perifericos del microcontrolador funcionen correctamente en su interfaz fisica (pines, señales electricas, etc.)
+Los tests unitarios que tienen relacion con el hardware pueden dividirse en tres tipos\cite{tdd} detallados a continuacion:
+
+\begin{itemize}
+	\item \textbf{Tests de hardware automaticos} : Los tests se ejecutan de forma automatica desde su inicio hasta su fin y arrojan los resultados obtenidos.
+	\item \textbf{Tests de hardware automaticos parciales} : Requieren intervencion manual durante el proceso.
+	\item \textbf{Tests de hardware automaticos con instrumentacion externa} : Requieren un instrumento externo que se conecte al hardware a testear.
+\end{itemize}
+
+Los test desarrollados en este trabajo pueden catalogarse como parciales y con instrumentacion externa, ya que se requiere intervencion de una persona en ciertas etapas (por ejemplo para presionar un pulsador) y tambien se requiere la conexion de un dispositivo para recibir y reenviar las tramas RS-485 generadas en los tests.
+
+\begin{table}[h]
+	\centering
+	\caption[]{Conexiones de hardware requeridas para ejecutar los tests.}
+	\begin{tabular}{l c}    
+		\toprule
+		\textbf{PIN} 	 	& \textbf{Conectar a}   									\\
+		\midrule
+		232\_RX	 				& 232\_TX (con una R de 100ohm en serie)		\\	
+		GPIO8	 					& GPIO7 (con una R de 100ohm en serie)		\\		
+		CH1	 						& GNDA																		\\		
+		CH2	 						& GNDA																		\\		
+		CH3	 						& GNDA																		\\		
+		RS485						& Terminal con eco												\\
+		\bottomrule
+		\hline
+	\end{tabular}
+	\label{tab:hardreq}
+\end{table}
+
+En la tabla \ref{tab:hardreq} se detallan las conexiones de hardware requeridas para la ejecucion de los tests, las comunicaciones seriales (las dos UARTs) requieren que se reciba lo mismo que se transmite, por lo que en el caso de la UART a nivel 3.3V se soluciona conectando ambos pines entre si, pero en el caso de la interfaz RS-485 se requiere conectar el bus a un dispositivo externo (una PC con entrada RS-485 por ejemplo) que reciba y envie lo recibido.
+Para probar las GPIOs tanto en su configuracion como entradas asi como su configuracion como salidas, el problema se resuelve conectando dos GPIOs entre si. Se recuerda que el proposito del test no es probar el funcionamiento del hardware, por lo que con solo utilizar dos pines se pueden completar los tests requeridos. Por ultimo se conectan las entradas analogicas a un valor de 0V.
+
+Se realizazon XX tests para la capa uPython HAL y XX tests para la capa de Python que utiliza el usuario.
+
+\section{Tests Unitarios para ventanas que componen el IDE}
+\label{sec:testUnitariosIDE}
+
+
+
+
+\section{Tests funcionales}
+\label{sec:testUnitariosIDE}
+
+
+Test-After Development
+test funcionales:
+los test unitarios no encuentran todos los bugs
+

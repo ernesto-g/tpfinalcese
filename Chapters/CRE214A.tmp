@@ -1,0 +1,79 @@
+% Chapter 1
+
+\chapter{Introducción General} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+\label{IntroGeneral}
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+\newcommand{\grados}{$^{\circ}$}
+
+%----------------------------------------------------------------------------------------
+
+En este capítulo se abordará la problemática en la enseñanza de la programación de sistemas embebidos y la solución propuesta por medio de este trabajo.
+
+%----------------------------------------------------------------------------------------
+\section{Dificultades planteadas en la enseñanza de programación}
+
+Un alumno de nivel secundario o universitario que comienza su formación en el ámbito de la informática o electrónica, y es instruido para adquirir conocimientos de programación sobre sistemas embebidos, generalmente debe enfrentarse a ciertos problemas a los que no debería enfrentarse en una etapa tan temprana de aprendizaje. Estos problemas generalmente tienen que ver con el lenguaje elegido para aprender a programar y la sintaxis del mismo, así como también a la complejidad del \textit{IDE}\footnote{IDE: Entorno de Desarrollo Integrado.} utilizado y a requerir conocimientos medianamente avanzados sobre arquitecturas de microcontroladores. 
+
+Los típicos problemas a los que un estudiante inicial debe enfrentarse según (Kaczmarczyk, East, Petrick y Herman, 2010) \cite{papereducacion2} son modelos de datos, referencias, punteros, tipos de variables, bucles y sentencias condicionales. Si a estos problemas se le suman los mencionados previamente, se crea una situación en donde el alumno no puede focalizarse en comprender y practicar algoritmia, y debe lidiar con problemas de sintaxis, compilación, configuración del entorno de desarrollo, y complicados conocimientos de arquitectura para configurar y utilizar los periféricos de un microcontrolador como por ejemplo una entrada o salida digital y en muchos casos no pudiendo acceder a la documentación adecuada o a ejemplos detallados. 
+
+(Brito y de Sá-Soares, 2013) \cite{papereducacion3} aseguran que existe una alta tasa de incomprensión en las materias de introducción a la programación
+e investigaciones demuestran que herramientas que permiten escribir un algoritmo en forma simple y probar su ejecución de inmediato como \textit{Scratch}\footnote{Scratch: Lenguaje de programación basado en bloques.} dan resultados mucho más favorables (Resnick et al., 2009) \cite{papereducacion4}.
+
+
+\section{Objetivo}
+
+El objetivo principal del proyecto es proveer un conjunto de herramientas que permitan a estudiantes de educación secundaria y universitaria aprender programación sobre sistemas embebidos, evitando los típicos problemas que surgen en los primeros acercamientos a estos temas, debido a la complejidad que imponen los lenguajes y plataformas utilizadas comúnmente (lenguajes de nivel medio o bajo como C o ASM y entornos de desarrollo difíciles de configurar para la mirada de un principiante).
+El proyecto busca desde su simplicidad (tanto a nivel programación como configuración y puesta en marcha del entorno de desarrollo) evitar al principiante frustraciones que desalienten el aprendizaje.
+
+\section{Solución propuesta}
+
+Para abordar estos inconvenientes, se plantea un conjunto de herramientas que abarcan cada uno de los aspectos mencionados y brindan una solución integral a los mismos, permitiendo al alumno focalizarse en los verdaderos problemas de cada una de las etapas de aprendizaje.
+ 
+Para solucionar los problemas de sintaxis y compilación, se optó por el uso del lenguaje Python, cuya característica principal, junto con otros lenguajes como JavaScript, es su sintaxis clara y simple, con muy pocas reglas en lo que respecta a palabras reservadas del lenguaje y tipos de datos. Muchas universidades utilizan Python como lenguaje para enseñar programación debido a estas características\cite{papereducacion}.
+
+Combinando la simplicidad del lenguaje Python con la popularidad de la plataforma de hardware EDU-CIAA-NXP se concluye que la creación de un conjunto de herramientas que permitan la utilización de dicho lenguaje sobre la plataforma, permitiendo el uso de los periféricos básicos de la misma, utilizando una sintaxis simple y clara, sin necesitar conocimientos avanzados de arquitecturas de microcontroladores para su utilización, es una justificación más que acertada para el desarrollo de este trabajo.
+
+Para solucionar los conflictos de complejos entornos de desarrollo difíciles de configurar y utilizar, con muchos requerimientos de hardware en la PC donde se utilizarían, se desarrolló un IDE mediante el cual solo puede escribirse código Python en un archivo, y grabar el mismo en la EDU-CIAA-NXP mediante un botón, y en el cual toda la configuración requerida consta de indicar el puerto serie donde se encuentra conectada la placa. A su vez se trató de mantener lo más bajo posible los requerimientos necesarios para ejecutar el IDE, permitiendo el uso en viejas generaciones de PCs que todavía forman parte de las escuelas secundarias, las cuales no podrían ejecutar IDEs complejos como \textit{Eclipse}\footnote{Eclipse: Entorno de desarrollo integrado para múltiples lenguajes. url:https://eclipse.org} o \textit{Netbeans}\footnote{Netbeans: Entorno de desarrollo integrado para múltiples lenguajes. url:https://netbeans.org} .
+
+Por último se escribieron ejemplos con explicaciones detalladas que demuestran el uso de la placa para la construcción de proyectos típicos de escuelas técnicas secundarias, junto con la documentación detallada de todas las bibliotecas Python disponibles para manejar algunos periféricos de la EDU-CIAA-NXP, evitando así requerir conocimientos de microcontroladores para la configuración y uso de los mismos.
+
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+
+ 
+%\section{Justificación}
+%Combinando la simplicidad del lenguaje Python con la popularidad de la plataforma de hardware EDU-CIAA-NXP se concluye que la creación de un conjunto de herramientas que permitan la utilización de dicho lenguaje sobre la plataforma, permitiendo el uso de los periféricos básicos de la misma, utilizando una sintaxis simple y clara, sin necesitar conocimientos avanzados de arquitecturas de microcontroladores para su inicialización, es una justificación más que acertada para el desarrollo de este trabajo.
+%----------------------------------------------------------------------------------------
+
+
+%\section{Alcance}
+
+%El proyecto incluye el desarrollo del soporte para la placa, de modo que se puedan utilizar los periféricos básicos del microcontrolador desde código Python, de una manera simple y sin necesidad de conocer los registros de configuración de cada periférico. 
+%Para ello se puso énfasis en la calidad del desarrollo del firmware, implementando tests unitarios y funcionales, permitiendo la validación de los requerimientos planteados para el proyecto.
+%Por otro lado se desarrolló un software a modo de entorno de programación, mono archivo, que permite escribir y enviar el código Python a la placa, para que ésta lo ejecute.
+%El alcance del proyecto también incluye la realización de proyectos de ejemplo utilizando la placa y el lenguaje Python, así como también la documentación de las bibliotecas desarrolladas para programar.
+%El proyecto no incluye la implementación de periféricos complejos como Ethernet, USB o CAN. 
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+

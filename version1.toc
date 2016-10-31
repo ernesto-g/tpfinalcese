@@ -1,0 +1,44 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {spanish}
+\contentsline {chapter}{Resumen}{\es@scroman {iii}}{section*.1}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n General}{1}{chapter.7}
+\contentsline {section}{\numberline {1.1}Dificultades planteadas en la ense\IeC {\~n}anza de programaci\IeC {\'o}n}{1}{section.8}
+\contentsline {section}{\numberline {1.2}Objetivo}{2}{section.11}
+\contentsline {section}{\numberline {1.3}Soluci\IeC {\'o}n propuesta}{2}{section.12}
+\contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n Espec\IeC {\'\i }fica}{3}{chapter.15}
+\contentsline {section}{\numberline {2.1}La plataforma de Hardware}{3}{section.16}
+\contentsline {section}{\numberline {2.2}Utilizaci\IeC {\'o}n de MicroPython}{4}{section.21}
+\contentsline {section}{\numberline {2.3}Arquitectura del Firmware}{5}{section.24}
+\contentsline {section}{\numberline {2.4}Arquitectura del Software}{6}{section.26}
+\contentsline {section}{\numberline {2.5}Requerimientos}{8}{section.28}
+\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{9}{chapter.49}
+\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o de Firmware}{9}{section.50}
+\contentsline {subsection}{\numberline {3.1.1}Punto de partida}{9}{subsection.51}
+\contentsline {subsection}{\numberline {3.1.2}Creaci\IeC {\'o}n de bibliotecas Python: M\IeC {\'o}dulos y Clases}{10}{subsection.54}
+\contentsline {subsection}{\numberline {3.1.3}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{12}{subsection.59}
+\contentsline {subsection}{\numberline {3.1.4}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{14}{subsection.78}
+\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{15}{section.80}
+\contentsline {subsection}{\numberline {3.2.1}Punto de partida}{15}{subsection.81}
+\contentsline {subsection}{\numberline {3.2.2}Dise\IeC {\~n}o del IDE}{15}{subsection.83}
+\contentsline {subsection}{\numberline {3.2.3}Env\IeC {\'\i }o del archivo a la placa}{18}{subsection.98}
+\contentsline {section}{\numberline {3.3}Documentaci\IeC {\'o}n}{18}{section.100}
+\contentsline {subsection}{\numberline {3.3.1}Proyectos de ejemplo}{19}{subsection.101}
+\contentsline {subsection}{\numberline {3.3.2}Documentaci\IeC {\'o}n de las bibliotecas implementadas}{19}{subsection.102}
+\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{21}{chapter.103}
+\contentsline {section}{\numberline {4.1}Tests unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{21}{section.104}
+\contentsline {section}{\numberline {4.2}Test unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde Python}{23}{section.152}
+\contentsline {section}{\numberline {4.3}Ejecucion de los tests sobre la placa}{27}{section.214}
+\contentsline {subsection}{\numberline {4.3.1}Requerimientos para la ejecucion de los tests.}{28}{subsection.238}
+\contentsline {section}{\numberline {4.4}Tests Unitarios para ventanas que componen el IDE}{28}{section.240}
+\contentsline {section}{\numberline {4.5}Tests funcionales}{28}{section.241}
+\contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.242}
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{29}{section.243}
+\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{29}{section.244}
+\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{31}{appendix.245}
+\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{31}{section.246}
+\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{32}{section.270}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{34}{section.294}
+\contentsline {chapter}{\numberline {B}Tests funcionales del uso de perif\IeC {\'e}ricos desde c\IeC {\'o}digo Python}{37}{appendix.332}
+\contentsline {chapter}{\numberline {C}Tests funcionales del uso del IDE}{39}{appendix.333}
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.334}
