@@ -12,29 +12,26 @@ En esta capítulo se detalla la plataforma de hardware utilizada, y se hace una 
 La Computadora Industrial Abierta Argentina (CIAA) es un proyecto que comenzó en el año 2013 
 gracias a la acción conjunta de \textit{ACSE}\footnote{ACSE: Asociación Civil para la investigación, promoción y desarrollo de los Sistemas electrónicos Embebidos.} y \textit{CADIEEL}\footnote{CADIEEL: Cámara Argentina de Industrias Electrónicas, Electromecánicas y Luminotécnicas.}, dando lugar a una plataforma de hardware que posee dos valiosas características: ser de carácter industrial, es decir, pensada y diseñada para las exigencias de confiabilidad que la industria requiere, y ser abierta bajo licencia BSD, lo cual promueve su uso, modificación y redistribución.
 
-Este trabajo se basó principalmente en la versión educativa de esta computadora, llamada “EDU-CIAA-NXP” la cual utiliza un microcontrolador NXP LPC 4337 JDB 144 (Dual-core Cortex-M4 + Cortex-M0).
+Este trabajo se basó principalmente en la versión educativa de esta computadora, llamada “EDU-CIAA-NXP” cuyo diagrama en bloques se observa en la figura \ref{fig:educiaaBloques}.
 
-\begin{figure}[ht]
+\begin{figure}[h]
   \centering
     \includegraphics[width=0.7\textwidth]{Figures/fig_educiaa_diagrama_en_bloques}
   \caption{Diagrama en bloques de la plataforma EDU-CIAA-NXP}
   \label{fig:educiaaBloques}
 \end{figure}
 
-Como se observa en la figura \ref{fig:educiaaBloques} la placa tiene 4 pulsadores, 3 leds y un led RGB con los cuales es posible realizar muchos ejercicios, asi como tambien una conexión USB mediante un chip FT2232 el cual brinda un puerto JTAG y una UART para conectar el microcontrolador con la PC.
-La placa también posee dos conectores P1 y P2 de 40 pines cada uno, en donde se encuentran conectados los periféricos del micontrontrolador (GPIOs, UARTs, SPI, I2C, etc.)
+La EDU-CIAA-NXP utiliza un microcontrolador NXP LPC 4337 JDB 144 (Dual-core Cortex-M4 + Cortex-M0). Como se observa en la figura \ref{fig:educiaaBloques} la placa tiene 4 pulsadores, 3 leds y un led RGB con los cuales es posible realizar muchos ejercicios, asi como tambien una conexión USB mediante un chip FT2232 el cual brinda un puerto JTAG y una UART para conectar el microcontrolador con la PC.
 
+La placa también posee dos conectores P1 y P2 de 40 pines cada uno, en donde se encuentran conectados los periféricos del micontrontrolador (GPIOs, UARTs, SPI, I2C, etc.). El diseño fue pensado para proveer una plataforma de desarrollo moderna y económica basada en la CIAA que sirva a docentes y a estudiantes en los cursos de sistemas embebidos y lograr una amplia inserción en el sistema educativo argentino.
+En la figura \ref{fig:educiaaPlaca} se muestra una foto de una placa EDU-CIAA-NXP en donde se puede observar claramente los 4 pulsadores y los leds SMD que permiten realizar ejercicios sin requerir componentes adicionales.
 
-\begin{figure}[ht]
+\begin{figure}[h]
   \centering
     \includegraphics[width=0.7\textwidth]{Figures/fig_educiaa_placa}
   \caption{Foto de una placa EDU-CIAA-NXP}
   \label{fig:educiaaPlaca}
 \end{figure}
-
-El diseño fue pensado para proveer una plataforma de desarrollo moderna y económica basada en la CIAA que sirva a docentes y a estudiantes en los cursos de sistemas embebidos y lograr una amplia inserción en el sistema educativo argentino.
-
-En la figura \ref{fig:educiaaPlaca} se muestra una foto de una placa EDU-CIAA-NXP en donde se puede observar claramente los 4 pulsadores y los leds SMD que permiten realizar ejercicios sin requerir componentes adicionales.
 
 %----------------------------------------------------------------------------------------
 
@@ -78,7 +75,7 @@ A continuación se detalla la arquitectura del firmware implementado en este tra
   \label{fig:firmwareArq}
 \end{figure}
 
-Estos tres bloques mencionados y que pueden identificarse en la figura \ref{fig:firmwareArq} representan el firmware del proyecto MicroPython creado por Martin Ribelotta que se tomó como punto de partida para el desarrollo de este trabajo. 
+Estos tres bloques mencionados representan el firmware del proyecto MicroPython creado por Martin Ribelotta que se tomó como punto de partida para el desarrollo de este trabajo. 
 
 A continuación se detallan los bloques que se han desarrollado:
 

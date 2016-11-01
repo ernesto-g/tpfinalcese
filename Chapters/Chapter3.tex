@@ -46,14 +46,14 @@ En este capítulo se detalla el desarrollo del firmware, software y documentaci�
 
 Al tomar el port de MicroPython para la EDU-CIAA-NXP desarrollado por Martín Ribelotta, era posible ejecutar un intérprete \textit{REPL}\footnote{REPL: Read Eval Print Loop. Mecanismo que toma una expresión escrita por el usuario, la evalúa y ejecuta, devolviendo el resultado al usuario.} que provee el proyecto, el cual tiene como standard input (stdin) y standard output (stdout) el puerto serie que la placa tiene conectado a través del conversor USB, de modo que en la PC se crea un COM Virtual que permite a cualquier programa que emula una terminal por puerto serial, conectarse a dicho intérprete.
 
+En la figura \ref{fig:conexion} se observan los bloques que modelan la conexión de la placa con la PC. Mediante el circuito integrado FT2232 que posee la placa, se conecta por medio del bus USB, la PC a la EDU-CIAA-NXP, permitiendo visualizar uno de los módulos UART del microcontrolador como un puerto serie en la PC.
+
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.7\textwidth]{Figures/fig_conexion}
   \caption{Conexión de la EDU-CIAA-NXP con la PC}
   \label{fig:conexion}
 \end{figure}
-
-En la figura \ref{fig:conexion} se observan los bloques que modelan la conexión de la placa con la PC. Mediante el circuito integrado FT2232 que posee la placa, se conecta por medio del bus USB, la PC a la EDU-CIAA-NXP, permitiendo visualizar uno de los módulos UART del microcontrolador como un puerto serie en la PC.
 
 Esto permite ejecutar programas que no tengan interacción con el resto del hardware, por ejemplo, se puede escribir:
 
@@ -218,7 +218,7 @@ En la figura \ref{fig:classes} se observa el diagrama de clases definido para el
 
 \subsection{Punto de partida} 
 
-Para el desarrollo del IDE se tomó como base el proyecto EDILE \cite{edile} el cual se encuentra escrito en lenguaje Python y proporciona un procesador de texto con coloreado de palabras clave según el lenguaje seleccionado, el cual se detecta automáticamente por la extensión del archivo que se abre.
+Para el desarrollo del IDE se tomó como base el proyecto EDILE \cite{edile} el cual se muestra en la figura \ref{fig:edile}. El mismo se encuentra escrito en lenguaje Python y proporciona un procesador de texto con coloreado de palabras clave según el lenguaje seleccionado, el cual se detecta automáticamente por la extensión del archivo que se abre.
 
 \begin{figure}[ht]
   \centering
@@ -229,13 +229,13 @@ Para el desarrollo del IDE se tomó como base el proyecto EDILE \cite{edile} el 
 
 Debido a que se encuentra programado en Python es muy simple ejecutar el programa en diferentes sistemas operativos, de modo que utilizando este proyecto se puede cumplir con uno de los requerimientos planteados el cual decía que el software debe ser multiplataforma.
 
-Este procesador de texto posee un sistema de plug-ins mediante el cual se simplifica la incorporación de menúes que ejecuten ventanas adicionales que cumplan con cierta funcionalidad, de modo que el diseño de software que se realizó en este trabajo fue la incorporación de dichas ventanas y funcionalidades al editor, junto con modificaciones para que solo trabaje con archivos de código Python (.py) y algunas correcciones en el sistema de plug-ins.
+Este procesador de texto posee un sistema de plug-ins mediante el cual se simplifica la incorporación de menúes que ejecuten ventanas adicionales que cumplan con cierta funcionalidad, de modo que el diseño de software que se realizó en el presente trabajo fue la incorporación de dichas ventanas y funcionalidades al editor, junto con modificaciones para que solo trabaje con archivos de código Python (.py) y algunas correcciones en el sistema de plug-ins.
 
 Junto con las modificaciones mencionadas, se escribieron test unitarios para las ventanas y clases de lógica desarrolladas, asegurando al igual que en el firmware, la calidad del software requerida para un trabajo de especialización.
 
 \subsection{Diseño del IDE} 
 
-Se modificó el código del proyecto EDILE y se incorporó una barra de botones junto con una nueva opción de menú, llamada “EDU-CIAA”.
+Se modificó el código del proyecto EDILE y se incorporó una barra de botones junto con una nueva opción de menú, llamada “EDU-CIAA”. La incorporación de este nuevo menú fue posible gracias al sistema de plug-ins con el que cuenta en editor base, en la figura \ref{fig:idebuttons} se aprecia el menú agregado así como también los botones que poseen las mismas funcionalidades que las opciones del menú.
 
 \begin{figure}[ht]
   \centering
@@ -244,7 +244,7 @@ Se modificó el código del proyecto EDILE y se incorporó una barra de botones 
   \label{fig:idebuttons}
 \end{figure}
 
-La incorporación de este nuevo menú fue posible gracias al sistema de plug-ins con el que cuenta en editor base, en la figura \ref{fig:idebuttons} se aprecia el menú agregado así como también los botones que poseen las mismas funcionalidades que las opciones del menú.
+En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o que botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada.
 
 \begin{figure}[ht]
   \centering
@@ -253,23 +253,25 @@ La incorporación de este nuevo menú fue posible gracias al sistema de plug-ins
   \label{fig:ideclasses}
 \end{figure}
 
-En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o que botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada. A continuación se detallan las clases creadas:
+ A continuación se detallan las clases creadas:
 
 \begin{itemize}
-	\item \textbf{mnu\_EDUCIAA} : Recibe los eventos de click sobre los ítems del menú o los botones y lanza las diferentes ventanas (Terminal serie, Configuración, Snippets y Grabación).
-	\item \textbf{Console} : Ventana que se conecta por el puerto serial configurado y muestra en pantalla los caracteres recibidos, de la misma forma captura las teclas que el usuario presiona y las envía.
-	\item \textbf{ConfigWindow} : Ventana que permite al usuario configurar el puerto serie mediante el cual se comunica el IDE con la EDU-CIAA-NXP.
-	\item \textbf{SnippetsWindow} : Ventana que muestra una lista de porciones de código de ejemplo, y que por medio de un botón permite agregarlas al texto que el usuario está escribiendo.
-	\item \textbf{LoadScriptWindow} : Ventana que se encarga del envío del archivo a la placa utilizando el protocolo xmodem y de mostrar el progreso.
-	\item \textbf{ConfigManager} : Esta clase se encarga de escribir y leer en un archivo la configuración del IDE (es decir el puerto serie que seleccionó el usuario).
-	\item \textbf{SnippetsParser} : Todos los ejemplos que se muestran en la ventana de Snippets, se leen de un archivo XML. Esta clase se encarga de leer dicho archivo y devolver la información para que la ventana la pueda mostrar.	
-	\item \textbf{Protocol} : Recibe como dato el puerto serie y la ruta al archivo a transmitir, y se encarga de utilizar la biblioteca XMODEM para enviar el archivo hacia la placa.
-	\item \textbf{XMODEM} : Biblioteca que implementa el protocolo \textit{xmodem}\footnote{xmodem: Protocolo simple de transferencia de datos por medio de paquetes de 128bytes creado en 1977.} y permite el envío del archivo a la placa.	
+	\item \textbf{mnu\_EDUCIAA}: recibe los eventos de click sobre los ítems del menú o los botones y lanza las diferentes ventanas (Terminal serie, Configuración, Snippets y Grabación).
+	\item \textbf{Console}: ventana que se conecta por el puerto serial configurado y muestra en pantalla los caracteres recibidos, de la misma forma captura las teclas que el usuario presiona y las envía.
+	\item \textbf{ConfigWindow}: ventana que permite al usuario configurar el puerto serie mediante el cual se comunica el IDE con la EDU-CIAA-NXP.
+	\item \textbf{SnippetsWindow}: ventana que muestra una lista de porciones de código de ejemplo, y que por medio de un botón permite agregarlas al texto que el usuario está escribiendo.
+	\item \textbf{LoadScriptWindow}: ventana que se encarga del envío del archivo a la placa utilizando el protocolo xmodem y de mostrar el progreso.
+	\item \textbf{ConfigManager}: esta clase se encarga de escribir y leer en un archivo la configuración del IDE (es decir el puerto serie que seleccionó el usuario).
+	\item \textbf{SnippetsParser}: todos los ejemplos que se muestran en la ventana de Snippets, se leen de un archivo XML. Esta clase se encarga de leer dicho archivo y devolver la información para que la ventana la pueda mostrar.	
+	\item \textbf{Protocol}: recibe como dato el puerto serie y la ruta al archivo a transmitir, y se encarga de utilizar la biblioteca XMODEM para enviar el archivo hacia la placa.
+	\item \textbf{XMODEM}: biblioteca que implementa el protocolo \textit{xmodem}\footnote{xmodem: Protocolo simple de transferencia de datos por medio de paquetes de 128bytes creado en 1977.} y permite el envío del archivo a la placa.	
 \end{itemize}
 
 El diseño de las ventanas y sus contenidos fueron creados con el programa Glade\cite{glade} utilizado para crear ventanas para la biblioteca gráfica pyGTK.
 
 La lógica de cada ventana se encuentra implementada dentro de cada una de las clases, las cuales utilizan la biblioteca pyGTK para construir la interfaz gráfica por medio de un archivo XML (extensión .glade) donde se define el formato de la ventana y los componentes que posee dentro (Botones, etc.)
+
+En el algoritmo \ref{lst:pygtkbuilder} se muestra la creación del objeto builder el cual obtiene los datos de la ventana gráfica del archivo LoadScriptWindow.glade, archivo creado con el programa Glade. Luego en la línea 8 se observa cómo mediante el método get\_objet() se obtiene una referencia de un objeto Button definido para dicha ventana y que tiene asignado el nombre “btnClose”. De esta manera se obtienen las referencias de los objetos definidos en el archivo XML y que componen la ventana, permitiendo la interacción con los mismos desde el código.
 
 \begin{lstlisting}[language={python},label={lst:pygtkbuilder},caption=Porción de código que muestra la creación de la ventana a partir del archivo glade] 
 		try:
@@ -283,12 +285,12 @@ La lógica de cada ventana se encuentra implementada dentro de cada una de las c
 		
 \end{lstlisting}
 
-En el algoritmo \ref{lst:pygtkbuilder} se muestra la creación del objeto builder el cual obtiene los datos de la ventana gráfica del archivo LoadScriptWindow.glade, archivo creado con el programa Glade. Luego en la línea 8 se observa cómo mediante el método get\_objet() se obtiene una referencia de un objeto Button definido para dicha ventana y que tiene asignado el nombre “btnClose”. De esta manera se obtienen las referencias de los objetos definidos en el archivo XML y que componen la ventana, permitiendo la interacción con los mismos desde el código.
-
-
 \subsection{Envío del archivo a la placa}
 
 Para el envío del archivo a la placa, se utilizó el protocolo xmodem debido a su sencillez, este protocolo permite la trasferencia de datos en paquetes de 128 bytes o 1kbytes, por cada paquete transferido el receptor envía un acuse de recibo (ACK) o un aviso de que hubo un error (NACK).
+
+En la figura \ref{fig:secuencexmodem} se observa el diagrama de secuencia correspondiente a la transferencia de datos entre el firmware desarrollado y la lógica de la ventana LoadScriptWindow.
+En él se observa que al reiniciar la placa mediante su pulsador de reset, el firmware envía una trama NACK por el puerto serie, en el caso de que el IDE se encuentre en el modo de inicializar una grabación (porque el usuario abrió la ventana de grabación) se recibirá dicha trama y se reponderá con el primer paquete de datos de 128bytes, al cual el firmware que recibe dicha trama responderá con ACK si pudo grabarlo en la memoria de programa del microcontrolador o NACK en caso de error. 
 
 \begin{figure}[ht]
   \centering
@@ -296,9 +298,6 @@ Para el envío del archivo a la placa, se utilizó el protocolo xmodem debido a 
   \caption{Diagrama de secuencia que describe la comunicación entre el IDE y el firmware.}
   \label{fig:secuencexmodem}
 \end{figure}
-
-En la figura \ref{fig:secuencexmodem} se observa el diagrama de secuencia correspondiente a la transferencia de datos entre el firmware desarrollado y la lógica de la ventana LoadScriptWindow.
-En él se observa que al reiniciar la placa mediante su pulsador de reset, el firmware envía una trama NACK por el puerto serie, en el caso de que el IDE se encuentre en el modo de inicializar una grabación (porque el usuario abrió la ventana de grabación) se recibirá dicha trama y se reponderá con el primer paquete de datos de 128bytes, al cual el firmware que recibe dicha trama responderá con ACK si pudo grabarlo en la memoria de programa del microcontrolador o NACK en caso de error. 
 
 Este proceso continúa hasta que el IDE envía todas las tramas que corresponden al contenido del archivo que se esta enviando.
 El firmware irá agregando los datos recibidos al final de la memoria donde se grabaron los datos de la trama anterior.
@@ -310,28 +309,28 @@ El firmware irá agregando los datos recibidos al final de la memoria donde se g
 %----------------------------------------------------------------------------------------
 \section{Documentación}
 
-Como se indica en el capitulo \ref{Chapter1} el desarrollo del firmware y del software, no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentacion y los ejemplos adecuados. Esta es la razon por la que el IDE posee una ventana de Snippets con porciones de codigo de ejemplo, sin embargo esto no es suficiente, ya que no existe explicacion alguna de dichas porciones de codigo. 
-Ademas de los Snippets, se agregaron proyectos de ejemplo y documentacion de las clases y metodos desarrollados para el manejo de los perifericos.
+Como se indica en el capítulo \ref{Chapter1}, el desarrollo del firmware y del software no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentación y los ejemplos adecuados. Esta es la razón por la que el IDE posee una ventana de Snippets con porciones de código de ejemplo, sin embargo esto no es suficiente, ya que no existe explicación alguna de dichas porciones de código. 
+Además de los Snippets, se agregaron proyectos de ejemplo y documentación de las clases y métodos desarrollados para el manejo de los periféricos.
 
 \subsection{Proyectos de ejemplo} 
 
-Para la publicacion de ejemplos completos, se creo un repositorio publico en GitHub\cite{repoejemplos} en donde pueden descargarse diferentes tipos de proyectos con una explicacion detallada del codigo que se implemento. Los ejemplos se dividen en tres categorias:
+Para la publicación de ejemplos completos, se creó un repositorio público en GitHub\cite{repoejemplos} en donde pueden descargarse diferentes tipos de proyectos con una explicación detallada del código que se implementó. Los ejemplos se dividen en tres categorías:
 
 \begin{itemize}
-	\item \textbf{Inicial} : Cubren conceptos básicos de programación y del lenguaje Python.
-	\item \textbf{Intermedio} : Proyectos que requieren conocimientos intermedios de programación y básicos de electrónica.
-	\item \textbf{Avanzado} : Proyectos que requieren conocimientos avanzados de programación y electrónica..	
+	\item \textbf{Inicial}: cubren conceptos básicos de programación y del lenguaje Python.
+	\item \textbf{Intermedio}: proyectos que requieren conocimientos intermedios de programación y básicos de electrónica.
+	\item \textbf{Avanzado}: proyectos que requieren conocimientos avanzados de programación y electrónica..	
 \end{itemize}
 
-Cada proyecto es acompañado por un archivo README.md en donde se aclaran las funciones y sentencias utilizadas, y se explica el funcionamiento del codigo paso por paso.
+Cada proyecto es acompañado por un archivo README.md en donde se aclaran las funciones y sentencias utilizadas, y se explica el funcionamiento del código paso por paso.
 
 La idea es que la comunidad que utilice esta plataforma para desarrollar trabajos, en escuelas secundarias o universidades, aporte los trabajos implementados al repositorio, para que otros estudiantes puedan tomarlos como base para nuevos proyectos o simplemente para aprender de lo desarrollado.
 
 \subsection{Documentación de las bibliotecas implementadas} 
 
-Para acompañar a los proyectos de ejemplo y dar una base solida del uso y soporte de los perifericos, se escribio una documentacion detallada de cada clase con todos sus metodos, escribiendo tambien uno o mas ejemplos del uso de algunos metodos en particular.
+Para acompañar a los proyectos de ejemplo y dar una base sólida del uso y soporte de los periféricos, se escribió una documentación detallada de cada clase con todos sus métodos, escribiendo también uno o más ejemplos del uso de algunos métodos en particular.
 
-Esta documentacion se escribio en la pagina del proyecto CIAA, en la seccion Python\cite{bibpython}, la cual tambien es de acceso publico, cumpliendo asi con uno de los requerimientos mencionados en el capitulo \ref{Chapter2}. El link a esta pagina se encuentra accesible desde la ventana de Snippets del IDE.
+Esta documentación se escribió en la página del proyecto CIAA, en la sección Python\cite{bibpython}, la cual también es de acceso público, cumpliendo así con uno de los requerimientos mencionados en el capítulo \ref{Chapter2}. El link a esta página se encuentra accesible desde la ventana de Snippets del IDE.
 
 
 
