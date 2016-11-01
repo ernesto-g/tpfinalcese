@@ -214,6 +214,39 @@
     \field{year}{2010}
   \endentry
 
+  \entry{papereducacion5}{article}{}
+    \name{author}{2}{}{%
+      {{hash=IWWF}{%
+         family={IEEE.},
+         familyi={I\bibinitperiod},
+         given={Wayne Wolf.\bibnamedelima Fellow.},
+         giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Madsen},
+         familyi={M\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Computer engineering education, embedded computing, microprocessors.}
+    \strng{namehash}{IWWFMJ1}
+    \strng{fullhash}{IWWFMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{issn}{1558-2256}
+    \field{title}{Embedded Systems Education for the Future.}
+    \verb{url}
+    \verb http://home.iitj.ac.in/~saurabh.heda/Papers/Scheduling/Embedded%20sys
+    \verb tem%20design%20for%20future%20-1999.pdf
+    \endverb
+    \field{journaltitle}{PROCEEDINGS OF THE IEEE, VOL. 88, NO. 1}
+    \field{year}{2000}
+  \endentry
+
   \entry{jaltek}{misc}{}
     \name{author}{1}{}{%
       {{hash=J}{%
