@@ -10,13 +10,13 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Diagrama en bloques de la arquitectura del Software del IDE\relax }}{6}{figure.caption.26}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Conexi\IeC {\'o}n de la EDU-CIAA-NXP con la PC\relax }}{9}{figure.caption.52}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Anidamiento de llamadas a funciones desde Python a C\relax }}{11}{figure.caption.54}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Anidamiento de llamadas a funciones desde Python a C\relax }}{11}{figure.caption.55}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Relaci\IeC {\'o}n entre las clases Python y los archivos del Firmware\relax }}{12}{figure.caption.57}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama de clases para manejo de perif\IeC {\'e}ricos\relax }}{14}{figure.caption.78}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Procesador de texto EDILE v0.2\relax }}{15}{figure.caption.81}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Botones adicionales del IDE.\relax }}{16}{figure.caption.83}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama de clases de las funcionalidades agregadas al IDE.\relax }}{16}{figure.caption.84}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de secuencia que describe la comunicacion entre el IDE y el firmware.\relax }}{18}{figure.caption.98}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de secuencia que describe la comunicaci\IeC {\'o}n entre el IDE y el firmware.\relax }}{18}{figure.caption.98}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de archivos para la ejecuci\IeC {\'o}n de tests unitarios de la capa uPython HAL.\relax }}{23}{figure.caption.153}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de clases del m\IeC {\'o}dulo unittest.\relax }}{25}{figure.caption.180}
