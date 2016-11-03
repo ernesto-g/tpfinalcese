@@ -33,11 +33,11 @@
 \contentsline {section}{\numberline {4.5}Tests funcionales}{28}{section.242}
 \contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.243}
 \contentsline {section}{\numberline {5.1}Conclusiones generales }{29}{section.244}
-\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{29}{section.245}
-\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{31}{appendix.246}
-\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{31}{section.247}
-\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{32}{section.271}
-\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{34}{section.295}
-\contentsline {chapter}{\numberline {B}Tests funcionales del uso de perif\IeC {\'e}ricos desde c\IeC {\'o}digo Python}{37}{appendix.333}
-\contentsline {chapter}{\numberline {C}Tests funcionales del uso del IDE}{39}{appendix.334}
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.335}
+\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{29}{section.246}
+\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{31}{appendix.253}
+\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{31}{section.254}
+\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{32}{section.278}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{34}{section.302}
+\contentsline {chapter}{\numberline {B}Tests funcionales del uso de perif\IeC {\'e}ricos desde c\IeC {\'o}digo Python}{37}{appendix.340}
+\contentsline {chapter}{\numberline {C}Tests funcionales del uso del IDE}{39}{appendix.341}
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.342}

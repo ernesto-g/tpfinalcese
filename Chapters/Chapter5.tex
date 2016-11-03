@@ -4,6 +4,7 @@
 
 \label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
+En este capitulo se detallan las conclusiones del presente trabajo y los pasos a seguir.
 
 %----------------------------------------------------------------------------------------
 
@@ -13,11 +14,31 @@
 
 \section{Conclusiones generales }
 
+En el presente trabajo se a logrado implementar un conjunto de herramientas que permiten a estudiantes  de educación secundaria y universitaria aprender programacion sobre sistemas embebidos. Esto fue posible gracias a la decision de utilizar el lenguaje de programacion Python y la plataforma de hardware EDU-CIAA-NXP, proveyendo al alumno de un entorno de trabajo simple y bien documentado eliminando las trabas mencionadas en el capitulo \ref{Chapter1} que dificultan el aprendizaje en el ambito de la informatica y los sistemas embebidos.
+
+Como prueba del exito de este trabajo, puede mencionarse el dictado de una clase en el curso \textit{Paquete Tecnologico del Proyecto CIAA}\footnote{URL: http://www.proyecto-ciaa.com.ar/devwiki/doku.php?id=educacion:cursos:cursos\_programacion\_ciaa} en el marco de los Cursos Abiertos de Programación de Sistemas Embebidos en la cual los alumnos utilizaron una version preliminar de este trabajo y manejando los leds y pulsadores de la placa pudieron realizar un gran numero de practicas.
 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 \section{Próximos pasos}
+
+Como se menciona en la seccion \ref{sec:micropython} este trabajo partio de la utilizacion de una capa de soporte de hardware desarrollada en 2015 la cual se reescribio y mejoro utilizando tecnicas de ingenieria de software (las cuales no implementaba) para los perifericos mencionados en los requerimientos de este trabajo (seccion \ref{sec:req}). Existe otro grupo de perifericos para los cuales se debe hacer este mismo trabajo de refactoring e implementacion de tests, los cuales se detallan a continuacion:
+
+\begin{enumerate}
+	\item  Interrupciones.
+	\item  PWM.
+	\item  Keyboard y LCD (Poncho UI). 
+	\item  SPI e I2C (modo master).
+	\item  RTC.
+\end{enumerate}
+
+Tambien existen bibliotecas programadas exclusivamente en Python como el soporte de ModBus y operaciones con fecha y hora las cuales tampoco fueron implementadas siguiendo requerimientos ni validadas mediante ningun tipo de test. Y por ultimo existen perifericos para los que no hay soporte y se deberia comenzar de cero, como USB, CAN, Ethernet y los modos slave de los buses I2C y SPI.
+
+Con respecto al IDE, existe una nueva version la cual posee autocompletado y una ventana con tips de ayuda, ambas caracteristicas no han sido desarrolladas en un requerimiento y validadas de ninguna manera.
+
+Por ultimo existe un emulador de la placa EDU-CIAA-NXP en una version beta, creado por el autor de esta trabajo, el cual soporta ser lanzado desde otro programa (por ejemplo el IDE desarrollado u otro) y simula el script de Python programado, por el momento solo soporta el uso de leds y pulsadores, y no simula el resto de los perifericos, pero la continuacion de este proyecto a una version estable garantiza una version del conjunto de herramientas desarrollado la cual puede correr en una PC en su totalidad, eliminando la necesidad de que exista una placa por cada alumno o grupo de alumnos y bajando de esta forma los costos requeridos para utilizar esta herramienta en ambientes educativos.
+
 
 

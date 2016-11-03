@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  1 NOV 2016 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.16)  3 NOV 2016 19:12
 entering extended mode
 **./version1.tex
 (version1.tex
@@ -1491,11 +1491,8 @@ LaTeX Info: Redefining \sptext on input line 31.
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
  (Chapters/Chapter1.aux)
-(Chapters/Chapter2.aux) (Chapters/Chapter3.aux) (Chapters/Chapter4.aux
-
-LaTeX Warning: Label `sec:testUnitariosIDE' multiply defined.
-
-) (Chapters/Chapter5.aux) (Appendices/AppendixA.aux) (Appendices/AppendixB.aux) (Appendices/AppendixC.aux))
+(Chapters/Chapter2.aux) (Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux)
+(Appendices/AppendixA.aux) (Appendices/AppendixB.aux) (Appendices/AppendixC.aux))
 \openout1 = `version1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
@@ -2968,68 +2965,72 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 15.
+
+Overfull \hbox (62.29868pt too wide) in paragraph at lines 19--19
+[][][]\T1/ppl/m/n/9 URL: http://www.proyecto-ciaa.com.ar/devwiki/doku.php?id=educacion:cursos:cursos_programacion_ciaa| 
+
+ []
+
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 25.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 25.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 25.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 25.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 25.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 21.
-)
+(babel)             in language  on input line 25.
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 36.
 [29
 
 
 
-]
+])
+LaTeX Info: Redefining \sptext on input line 251.
+LaTeX Info: Redefining \. on input line 251.
+LaTeX Info: Redefining \% on input line 251.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 251.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 251.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 251.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 251.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 251.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 251.
+ [30]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (Appendices/AppendixA.tex
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
- [30
-
-
-
-]
 Ap\'{e}ndice A.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 3.
@@ -3078,7 +3079,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 38.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 38.
-[31]
+[31
+
+
+
+]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 69.
 Package babel Info: Redefining spanish shorthand >>
@@ -3347,32 +3352,70 @@ LaTeX Info: Redefining \% on input line 31.
 (Chapters/Chapter5.aux) (Appendices/AppendixA.aux) (Appendices/AppendixB.aux) (Appendices/AppendixC.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
-Package rerunfilecheck Info: File `version1.out' has not changed.
-(rerunfilecheck)             Checksum: C8C8CDE34CDCA9815B0637989D8FC938;9095.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `version1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `version1.out':
+(rerunfilecheck)             Before: 03497C142503812FA3E6579D8D9AD212;9095
+(rerunfilecheck)             After:  4DD5847CBDA44019C2A3E0EEFE910C68;9095.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'version1.run.xml'.
 \openout1 = `version1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35600 strings out of 493334
- 702419 string characters out of 3139245
- 993514 words of memory out of 3000000
- 38300 multiletter control sequences out of 15000+200000
+ 35624 strings out of 493334
+ 702714 string characters out of 3139245
+ 993552 words of memory out of 3000000
+ 38301 multiletter control sequences out of 15000+200000
  56507 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,77p,10383b,3490s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on version1.pdf (56 pages, 2139308 bytes).
+pdfTeX warning (dest): name{lstlisting.335} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.320} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.304} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.298} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.297} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.288} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.280} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.272} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.262} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.256} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix*.343} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.342} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.303} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.279} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.255} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.254} has been referenced but does not exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
+palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on version1.pdf (56 pages, 2145478 bytes).
 PDF statistics:
- 1007 PDF objects out of 1200 (max. 8388607)
- 402 named destinations out of 1000 (max. 500000)
+ 1038 PDF objects out of 1200 (max. 8388607)
+ 425 named destinations out of 1000 (max. 500000)
  401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
