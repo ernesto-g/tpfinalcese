@@ -19,9 +19,9 @@ Teniendo como principal objetivo un consumo reducido de memoria de datos y de pr
 En el algotimo \ref{lst:utest} se muestra la función utest\_startTest la cual se encarga de ejecutar un test unitario. La misma recibe los argumentos que se detallan a continuación:
 
 \begin{itemize}
-	\item \textbf{fncTest}:Una función donde se escribirá el test unitario.
-	\item \textbf{fncBefore}:Una función que en el caso de existir, se ejecutará antes de fncTest (puede utilizarse para inicializaciones antes de la ejecución del test).
-	\item \textbf{testName}:Un texto con el nombre del test, el cual se imprime antes de ejecutar las funciones (línea 8).	
+	\item \textbf{fncTest}: una función donde se escribirá el test unitario.
+	\item \textbf{fncBefore}: una función que en el caso de existir, se ejecutará antes de fncTest (puede utilizarse para inicializaciones antes de la ejecución del test).
+	\item \textbf{testName}: un texto con el nombre del test, el cual se imprime antes de ejecutar las funciones (línea 8).	
 \end{itemize}
 	
 El control de errores se observa en la línea 7 en donde se pone a cero la variable global utest\_flagTestError, luego de la ejecución de las funciones pasadas como argumento, en la línea 13 se evalúa el estado de dicha variable, la cual se pudo cargar con el valor 1 en la función del test si hubo un error. En dicho caso se imprime un mensaje de error (línea 15) indicando mediante otras variables globales el nombre del archivo y el número de línea donde se produjo el error en el test.
@@ -114,9 +114,9 @@ Este módulo forma parte de las bibliotecas Python que pueden escribirse directa
 En esta biblioteca se definió la clase TestCase, una parte de ella puede observarse en el algoritmo \ref{lst:testcase} en donde se muestra la definición de la clase y de los métodos:
 
 \begin{itemize}
-	\item \textbf{setUp}:Método que se ejecutará antes del método de test.
-	\item \textbf{tearDown}:Método que se ejecutará despues del método de test.
-	\item \textbf{assertEqual}:Método assert encargado de comparar dos valores por igual. En el caso de no ser iguales, se lanza una excepción que será capturada por el método que ejecuta los tests.
+	\item \textbf{setUp}: método que se ejecutará antes del método de test.
+	\item \textbf{tearDown}: método que se ejecutará despues del método de test.
+	\item \textbf{assertEqual}: método assert encargado de comparar dos valores por igual. En el caso de no ser iguales, se lanza una excepción que será capturada por el método que ejecuta los tests.
 \end{itemize}
 
 \begin{lstlisting}[label={lst:testcase},caption=Clase TestCase utilizada para crear tests unitarios para Python., language={python}]
@@ -267,9 +267,9 @@ Los tests desarrollados no fueron pensados para probar el hardware sino el firmw
 Los tests unitarios que tienen relación con el hardware pueden dividirse en tres tipos\cite{tdd} detallados a continuación:
 
 \begin{itemize}
-	\item \textbf{Tests de hardware automáticos}:Los tests se ejecutan de forma automática desde su inicio hasta su fin y arrojan los resultados obtenidos.
-	\item \textbf{Tests de hardware automáticos parciales}:Requieren intervencion manual durante el proceso.
-	\item \textbf{Tests de hardware automáticos con instrumentación externa}:Requieren un instrumento externo que se conecte al hardware a testear.
+	\item \textbf{Tests de hardware automáticos}: los tests se ejecutan de forma automática desde su inicio hasta su fin y arrojan los resultados obtenidos.
+	\item \textbf{Tests de hardware automáticos parciales}: requieren intervencion manual durante el proceso.
+	\item \textbf{Tests de hardware automáticos con instrumentación externa}: requieren un instrumento externo que se conecte al hardware a testear.
 \end{itemize}
 
 Los test desarrollados en este trabajo pueden catalogarse como parciales y con instrumentación externa, ya que se requiere intervención de una persona en ciertas etapas (por ejemplo para presionar un pulsador) y también se requiere la conexión de un dispositivo para recibir y reenviar las tramas RS-485 generadas en los tests.
@@ -289,25 +289,47 @@ Para probar las GPIOs tanto en su configuración como entradas así como su conf
 		CH1	 						& GNDA																		\\		
 		CH2	 						& GNDA																		\\		
 		CH3	 						& GNDA																		\\		
-		RS485						& Terminal con eco												\\
+		RS485						& Terminal con eco.9600-8N1								\\
 		\bottomrule
 		\hline
 	\end{tabular}
 	\label{tab:hardreq}
 \end{table}
 
-Se realizazon XX tests para la capa uPython HAL y XX tests para la capa de Python que utiliza el usuario.
+Se realizazon 58 tests para la capa uPython HAL y 69 tests para la capa de Python que utiliza el usuario.
 
 \section{Tests Unitarios para ventanas que componen el IDE}
 \label{sec:testUnitariosIDE}
 
+Para la creación de tests unitarios que prueben las ventanas del IDE y el proceso de grabación del código Python en la placa, se utilizó la biblioteca standard de Python llamada unittest la cual posee la clase TestCase. Como el IDE se ejecuta en una PC, no se utilizó la versión de unittest desarrollada para uPython (ver sección \ref{sec:testUnitariosPython}) sino que se optó por el uso de la original.
+
+En la figura \ref{fig:unittestide} puede observarse el diagrama de clases que involucra a la clase TestCase como clase padre de todas las clases de test que se implementaron.A diferencia de la biblioteca unittest para uPython, aquí los nombres de los métodos deben comenzar con “test\_”.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Figures/fig_unittest_ide}
+  \caption{Diagrama de clases de tests unitarios para el IDE}
+  \label{fig:unittestide}
+\end{figure}
+
+A continuación se detallan los test implementados:
+
+\begin{enumerate}
+	\item  \textbf{EditorTest}: se chequean las funcionalidades básicas de la ventana del IDE (abrir y guardar un archivo, etc.).
+	\item  \textbf{SnippetsWindowTest y SnippetsParserTest}: comprueban la correcta lectura del archivo XML con las porciones de código de ejemplo y su inserción en el código.
+	\item  \textbf{ConfigWindowTest y ConfigManagerTest}: comprueban el correcto manejo de los datos de configuración (el nombre del puerto serial seleccionado).
+	\item  \textbf{ConsoleWindowTest}: aquí se definen los tests para las operaciones de texto que realiza la consola, como agregar y quitar un texto de la misma.
+	\item  \textbf{LoadingWindowTest}: comprueba el envío del archivo con el código Python.
+\end{enumerate}
+
+Los tests escritos son generalmente de las ventanas, aunque también existen algunos de clases de más bajo nivel como la encargada de leer el archivo XML con los snippets, o la encargada de leer y guardar la configuración, de esta manera al ejecutar los tests se crean múltiples instancias de las ventanas del IDE y el resultado de los tests se emite por la consola.
 
 
 
 \section{Tests funcionales}
 \label{sec:testFuncionales}
 
-
+Para complementar los test unitarios implementados, se realizaron una serie de test funcionales que permitieron comprobar el correcto funcoi
 test funcionales:
 los test unitarios no encuentran todos los bugs
 
