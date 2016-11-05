@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1422
-NormalPos.bottom=562
+NormalPos.right=1192
+NormalPos.bottom=447
 Class=LaTeXView
 Document=Chapters\Chapter4.tex
 
 [Frame0_View0,0]
-TopLine=343
-Cursor=17914
+TopLine=369
+Cursor=18170
 
 [SessionInfo]
 FrameCount=1

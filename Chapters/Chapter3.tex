@@ -101,12 +101,13 @@ En la figura \ref{fig:calls} se muestra un diagrama donde se aprecia el \textit{
 
 \begin{figure}[ht]
   \centering
-    \includegraphics[width=0.99\textwidth]{Figures/fig_calls}
+    \includegraphics[width=1.05\textwidth]{Figures/fig_calls}
   \caption{Anidamiento de llamadas a funciones desde Python a C}
   \label{fig:calls}
 \end{figure}
 
-También se observa en dicha figura la llamada del método on() desde el objeto led, esto produce la ejecución de la función pyb\_led\_on() la cual se encuentra definida en el archivo modpybled.c, en este archivo, están declaradas todas las funciones que se mapean a métodos del objeto LED.
+Al ejecutarse la llamada del método on() desde el objeto led, se produce la ejecución de la función pyb\_led\_on() la cual se encuentra definida en el archivo modpybled.c, en este archivo están declaradas todas las funciones que se mapean a métodos del objeto LED. Cada método que pose el objeto led tendrá asociada una función dentro del archivo modpybled.c.
+
 Estos archivos modpybXXX.c representan la clase de un periférico (en este ejemplo modpybled.c representa la clase LED) y utilizan las funciones de la capa de abstracción de hardware (uPython HAL) definidas en ciaanxp\_mphal.c para acceder y utilizar los periféricos.
 Dentro de la capa uPython HAL, se utilizan las funciones definidas en la capa Board Support Package (archivo board.c) en donde se utilizan las funciones de la biblioteca \textit{LPCOpen}\footnote{LPCOpen: Biblioteca desarrollada por NXP la cual provee macros y funciones para acceder a los registros del microcontrolador desde lenguaje C.} para el manejo de periféricos.
 
@@ -294,7 +295,7 @@ En él se observa que al reiniciar la placa mediante su pulsador de reset, el fi
 
 \begin{figure}[ht]
   \centering
-    \includegraphics[width=0.8\textwidth]{Figures/fig_ide_xmodem}
+    \includegraphics[width=0.6\textwidth]{Figures/fig_ide_xmodem}
   \caption{Diagrama de secuencia que describe la comunicación entre el IDE y el firmware.}
   \label{fig:secuencexmodem}
 \end{figure}

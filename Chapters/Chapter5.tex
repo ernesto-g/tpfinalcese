@@ -36,9 +36,14 @@ Como se menciona en la seccion \ref{sec:micropython} este trabajo partio de la u
 
 Tambien existen bibliotecas programadas exclusivamente en Python como el soporte de ModBus y operaciones con fecha y hora las cuales tampoco fueron implementadas siguiendo requerimientos ni validadas mediante ningun tipo de test. Y por ultimo existen perifericos para los que no hay soporte y se deberia comenzar de cero, como USB, CAN, Ethernet y los modos slave de los buses I2C y SPI.
 
-Con respecto al IDE, existe una nueva version la cual posee autocompletado y una ventana con tips de ayuda, ambas caracteristicas no han sido desarrolladas en un requerimiento y validadas de ninguna manera.
+Con respecto al IDE, existe una nueva version beta la cual posee autocompletado y una ventana con tips de ayuda, ambas caracteristicas no han sido desarrolladas en un requerimiento ni validadas de ninguna manera.
 
-Por ultimo existe un emulador de la placa EDU-CIAA-NXP en una version beta, creado por el autor de esta trabajo, el cual soporta ser lanzado desde otro programa (por ejemplo el IDE desarrollado u otro) y simula el script de Python programado, por el momento solo soporta el uso de leds y pulsadores, y no simula el resto de los perifericos, pero la continuacion de este proyecto a una version estable garantiza una version del conjunto de herramientas desarrollado la cual puede correr en una PC en su totalidad, eliminando la necesidad de que exista una placa por cada alumno o grupo de alumnos y bajando de esta forma los costos requeridos para utilizar esta herramienta en ambientes educativos.
+Tambien existe una version preliminar de un emulador de la placa EDU-CIAA-NXP, creado por el autor de esta trabajo, el cual soporta ser lanzado desde otro programa (por ejemplo el IDE desarrollado) y simula el script de Python programado, por el momento solo soporta el uso de leds y pulsadores, y no simula el resto de los perifericos, pero la continuacion de este proyecto a una version estable garantiza una version del conjunto de herramientas desarrollado la cual puede correr en una PC en su totalidad, eliminando la necesidad de que exista una placa por cada alumno o grupo de alumnos y bajando de esta forma los costos requeridos para utilizar esta herramienta en ambientes educativos.
+
+Con respecto a la ayuda y documentacion, el autor de este trabajo tiene la idea de desarrollar videotutoriales en donde se muestre la ventana del IDE mientras se programa y se explica paso por paso lo programado, con ayuda de graficos u otras herramientas en el caso de requerirse. Estos videos tambien podrian estar divididos en diferentes niveles de complejidad como se hizo con el repositorio de ejemplos.
+
+Por ultimo existe la idea de generar una release del firmware en su version binaria, para poder ser programada en la placa sin necesidad de instalar en la PC las herramientas de compilacion, esto se logra puenteando el jumper JP5 de la placa y ejecutando programas como lpc21isp o FlashMagic. Si bien es verdad que en el caso de una entidad educativa solo el profesor podria instalarse las herramientas de compilacion y grabar las placas con el firmware para los alumnos, es una buena idea  disponer de una manera simple de grabar la EDU-CIAA-NXP para que principiantes y autodidactas que han adquirido la placa puedan comenzar a programar sin trabas.
 
 
+ 
 

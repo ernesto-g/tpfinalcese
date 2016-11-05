@@ -16,11 +16,11 @@
 \contentsline {subsection}{\numberline {3.1.1}Punto de partida}{9}{subsection.50}
 \contentsline {subsection}{\numberline {3.1.2}Creaci\IeC {\'o}n de bibliotecas Python: M\IeC {\'o}dulos y Clases}{10}{subsection.53}
 \contentsline {subsection}{\numberline {3.1.3}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{12}{subsection.58}
-\contentsline {subsection}{\numberline {3.1.4}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{14}{subsection.77}
-\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{15}{section.79}
-\contentsline {subsection}{\numberline {3.2.1}Punto de partida}{15}{subsection.80}
+\contentsline {subsection}{\numberline {3.1.4}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{13}{subsection.77}
+\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{14}{section.79}
+\contentsline {subsection}{\numberline {3.2.1}Punto de partida}{14}{subsection.80}
 \contentsline {subsection}{\numberline {3.2.2}Dise\IeC {\~n}o del IDE}{15}{subsection.82}
-\contentsline {subsection}{\numberline {3.2.3}Env\IeC {\'\i }o del archivo a la placa}{18}{subsection.97}
+\contentsline {subsection}{\numberline {3.2.3}Env\IeC {\'\i }o del archivo a la placa}{17}{subsection.97}
 \contentsline {section}{\numberline {3.3}Documentaci\IeC {\'o}n}{18}{section.99}
 \contentsline {subsection}{\numberline {3.3.1}Proyectos de ejemplo}{19}{subsection.100}
 \contentsline {subsection}{\numberline {3.3.2}Documentaci\IeC {\'o}n de las bibliotecas implementadas}{19}{subsection.101}
@@ -34,10 +34,10 @@
 \contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.243}
 \contentsline {section}{\numberline {5.1}Conclusiones generales }{29}{section.244}
 \contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{29}{section.246}
-\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{31}{appendix.253}
-\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{31}{section.254}
-\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{32}{section.278}
-\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{34}{section.302}
-\contentsline {chapter}{\numberline {B}Tests funcionales del uso de perif\IeC {\'e}ricos desde c\IeC {\'o}digo Python}{37}{appendix.340}
-\contentsline {chapter}{\numberline {C}Tests funcionales del uso del IDE}{39}{appendix.341}
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.342}
+\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{31}{appendix.252}
+\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{31}{section.253}
+\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{32}{section.277}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{34}{section.301}
+\contentsline {chapter}{\numberline {B}Tests funcionales del uso de perif\IeC {\'e}ricos desde c\IeC {\'o}digo Python}{37}{appendix.339}
+\contentsline {chapter}{\numberline {C}Tests funcionales del uso del IDE}{39}{appendix.340}
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.341}
