@@ -329,7 +329,64 @@ Los tests escritos son generalmente de las ventanas, aunque también existen alg
 \section{Tests funcionales}
 \label{sec:testFuncionales}
 
-Para complementar los test unitarios implementados, se realizaron una serie de test funcionales que permitieron comprobar el correcto funcoi
-test funcionales:
-los test unitarios no encuentran todos los bugs
+Para complementar los test unitarios implementados, se realizaron una serie de test funcionales que permitieron comprobar el correcto funcionamiento de las clases Python que puede usar el usuario para programar código Python en la EDU-CIAA-NXP y manejar los periféricos de la misma, así como también se escribieron test funcionales para chequear el comportamiento IDE una vez integradas las ventanas que se incorporaron al mismo.
+
+Para escribir estos tests, primero se listaron los requerimientos asignándoles un nombre con la forma R-XX, por ejemplo R-01 o R-02, luego se escribieron los tests funcionales, cada uno cubrió al menos un requerimiento, y se nombraron con la forma TF-XX por ejemplo TF-01 o TF-02. Cada test consiste en una lista de pre-requisitos y una serie de pasos que el usuario debe seguir y que le indican qué hacer, y cual es el resultado esperado para cada paso. Al final del test se aclara qué requisitos cubre el test escrito.
+
+Por último se dibujó la matriz de trazabilidad, la cual consiste en una tabla con los nombres de los requerimientos en las columnas y los nombres de los tests en las filas y en donde se indica qué test cubre qué requerimiento mediante una X.
+
+
+\subsection{Tests funcionales para el IDE}
+
+Para escribir estos tests, primero se listaron 8 requerimientos y luego se escribieron 7 tests funcionales, por ejemplo a continuación se detalla el test TF-01:
+
+\textbf{Test funcional TF-01: Ventana de Configuración del puerto serie.}
+
+Pre-condiciones:
+\begin{itemize}
+	\item Tener una placa conectada a la PC
+	\item Tener el IDE instalado
+\end{itemize}
+
+Pasos:
+\begin{enumerate}
+	\item Abrir el IDE. Resultado: deberá aparecer un splash y luego la ventana del editor.
+	\item Seleccionar el menú “EDU-CIAA” -> Configuration. Resultado: se lanzará una nueva ventana con la configuración del puerto serie.
+	\item Seleccionar del combo el puerto serie correspondiente a la placa. Resultado: al desplegar el combo deberá aparecer al menos una opción.
+	\item Presionar OK. Resultado: la ventana deberá cerrarse.
+\end{enumerate}
+	
+Requerimientos testeados:R-07
+
+
+\subsection{Tests funcionales para clases Python de manejo de periféricos}
+
+Para escribir estos tests, primero se listaron 8 requerimientos y luego se escribieron 8 tests funcionales, por ejemplo a continuación se detalla el test TF-08:
+
+\textbf{Test Funcional T-08. Módulo de Python pyb.EEPROM.}
+
+Pasos:
+\begin{enumerate}
+	\item Abrir el IDE.
+	\item Conectar la EDU-CIAA-NXP y configurar el Puerto Serie en el IDE.
+	\item Escribir un programa que cree un objeto EEPROM.
+	\item Escribir en la dirección 0x0000 el valor 0x27.
+	\item Ejecutar el programa para que se escriba el valor en la EEPROM.
+	\item Comentar la línea de la escritura.
+	\item Leer el valor en la dirección 0x0000 e imprimirlo en hexadecimal.
+	\item Volver a ejecutar el programa, debería aparecer el valor 0x27.
+\end{enumerate}
+
+Código a escribir:
+
+\begin{verbatim}
+import pyb
+eeprom = pyb.EEPROM()
+#eeprom.write_byte(0x0000,0x27)
+val = eeprom.read_byte(0x0000)
+print(hex(val))
+\end{verbatim}
+
+Requerimientos testeados:R-08
+
 
