@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  6 NOV 2016 17:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.16)  6 NOV 2016 22:50
 entering extended mode
 **./version1.tex
 (version1.tex
@@ -3116,28 +3116,28 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 7.
 
-Overfull \hbox (4.30916pt too wide) in paragraph at lines 21--22
-[]\T1/ppl/b/n/10.95 MP_OBJ_NEW_QSTR(MP_QSTR___name__) \T1/ppl/m/n/10.95 : Atri-bu-to __na-me__ del mó-
+Overfull \hbox (1.26517pt too wide) in paragraph at lines 21--22
+[]\T1/ppl/b/n/10.95 MP_OBJ_NEW_QSTR(MP_QSTR___name__) \T1/ppl/m/n/10.95 : atri-bu-to __na-me__ del mó-
  []
 
 
-Overfull \hbox (5.41484pt too wide) in paragraph at lines 28--29
-[]\T1/ppl/b/n/10.95 MP_OBJ_NEW_QSTR(MP_QSTR_pyb) \T1/ppl/m/n/10.95 : String pyb de-fi-ni-do en qstrdefs-
+Overfull \hbox (4.30888pt too wide) in paragraph at lines 28--29
+[]\T1/ppl/b/n/10.95 MP_OBJ_NEW_QSTR(MP_QSTR_pyb) \T1/ppl/m/n/10.95 : string pyb de-fi-ni-do en qstrdefs-
  []
 
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 37.
 [35
 
 
@@ -3165,70 +3165,69 @@ Overfull \hbox (10.76556pt too wide) in paragraph at lines 71--72
 \T1/ppl/m/n/10.95 Pa-ra ello se crea el ar-chi-vo modpy-bled.c en don-de se de-fi-ne la struct pyb_led_type
  []
 
-LaTeX Info: Redefining \sptext on input line 88.
-LaTeX Info: Redefining \. on input line 88.
-LaTeX Info: Redefining \% on input line 88.
+LaTeX Info: Redefining \sptext on input line 86.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 86.
 [36]
-Overfull \hbox (40.28647pt too wide) in paragraph at lines 132--133
-[]\T1/ppl/m/n/10.95 se eje-cu-ta-rá la fun-ción pyb_led_on() a la cual ha-ce re-fe-ren-cia la struct pyb_led_on_obj.
- 
+Overfull \hbox (40.28647pt too wide) in paragraph at lines 121--127
+\T1/ppl/m/n/10.95 se eje-cu-ta-rá la fun-ción pyb_led_on() a la cual ha-ce re-fe-ren-cia la struct pyb_led_on_obj. 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 144.
-LaTeX Info: Redefining \sptext on input line 147.
-LaTeX Info: Redefining \. on input line 147.
-LaTeX Info: Redefining \% on input line 147.
+(babel)             in language  on input line 138.
+LaTeX Info: Redefining \sptext on input line 142.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 142.
 [37]
-LaTeX Info: Redefining \sptext on input line 191.
-LaTeX Info: Redefining \. on input line 191.
-LaTeX Info: Redefining \% on input line 191.
+LaTeX Info: Redefining \sptext on input line 185.
+LaTeX Info: Redefining \. on input line 185.
+LaTeX Info: Redefining \% on input line 185.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 191.
+(babel)             in language  on input line 185.
  [38])
 LaTeX Info: Redefining \sptext on input line 266.
 LaTeX Info: Redefining \. on input line 266.
@@ -3324,7 +3323,7 @@ Package logreq Info: Writing requests to 'version1.run.xml'.
 Here is how much of TeX's memory you used:
  35606 strings out of 493334
  702261 string characters out of 3139245
- 988758 words of memory out of 3000000
+ 988756 words of memory out of 3000000
  38297 multiletter control sequences out of 15000+200000
  54022 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3333,9 +3332,9 @@ Here is how much of TeX's memory you used:
 cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on version1.pdf (54 pages, 2352420 bytes).
+Output written on version1.pdf (54 pages, 2352526 bytes).
 PDF statistics:
- 1038 PDF objects out of 1200 (max. 8388607)
+ 1039 PDF objects out of 1200 (max. 8388607)
  426 named destinations out of 1000 (max. 500000)
  406 words of extra memory for PDF output out of 10000 (max. 10000000)
 

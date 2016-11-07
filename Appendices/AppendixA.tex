@@ -6,7 +6,7 @@
 
 \section{Creación de un módulo}
 
-Para poder definir un módulo personalizado, y luego definir clases dentro de él, se debe crear un archivo de código C en el cual se define una struct que representará el módulo, declarando todas las clases que estarán dentro de él. Por ejemplo el archivo modpyb.c se utilizó para declarar el módulo “pyb” el cual contiene todas las clases para el manejo de los periféricos.
+Para poder definir un módulo personalizado, y luego definir clases dentro de él, se debe crear un archivo de código C en el cual se define una struct que representará el módulo, declarando todas las clases que estarán dentro de él. Por ejemplo el archivo modpyb.c se utilizó para declarar el módulo “pyb” el cual contiene todas las clases para el manejo de los periféricos y se observa en el algoritmo \ref{lst:struct_modpyb}.
 
 \begin{lstlisting}[label={lst:struct_modpyb},caption=Estructura donde se definen los atributos\, funciones y clases del módulo.] 
 STATIC const mp_map_elem_t pyb_module_globals_table[] = {
@@ -16,21 +16,23 @@ STATIC const mp_map_elem_t pyb_module_globals_table[] = {
 //...
 \end{lstlisting}
 
-En la porción de código del algoritmo \ref{lst:struct_modpyb} se observan 3 ítems, cada ítem posee dos campos, el primero es un texto que representa el nombre de un atributo, función o clase que posee el módulo:
+Aquí observan 3 ítems, cada ítem posee dos campos, el primero es un texto que representa el nombre de un atributo, función o clase que posee el módulo:
 \begin{itemize}
-\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_\_\_name\_\_)} : Atributo \_\_name\_\_ del módulo.
-\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_delay)} : Funcion delay del módulo
-\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_LED)} : Clase LED del módulo
+\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_\_\_name\_\_)} : atributo \_\_name\_\_ del módulo.
+\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_delay)} : función delay del módulo
+\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_LED)} : clase LED del módulo
 \end{itemize}
 
-y el segundo es el valor, que puede ser otro texto, o un puntero a una struct del tipo mp\_obj\_t que representará una función o una clase:
+y el segundo es el valor, que puede ser otro texto, o un puntero a una struct del tipo mp\_obj\_t que representa una función o una clase:
 \begin{itemize}
-\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_pyb)} : String “pyb” definido en qstrdefsport.h
-\item \textbf{(mp\_obj\_t)\&pyb\_delay\_obj} : Puntero a struct que representa la función delay.
-\item \textbf{(mp\_obj\_t)\&pyb\_led\_type} : Puntero a struct que representa la clase LED.
+\item \textbf{MP\_OBJ\_NEW\_QSTR(MP\_QSTR\_pyb)} : string “pyb” definido en qstrdefsport.h
+\item \textbf{(mp\_obj\_t)\&pyb\_delay\_obj} : puntero a struct que representa la función delay.
+\item \textbf{(mp\_obj\_t)\&pyb\_led\_type} : puntero a struct que representa la clase LED.
 \end{itemize}
 
 El texto “pyb” así como todos los textos que se utilizan desde el código Python, se deben definir en el archivo qstrdefsport.h con la macro “Q()” y para ser referenciados desde código C, se utiliza la macro “MP\_OBJ\_NEW\_QSTR()”
+
+La función “delay” se encuentra definida dentro del mismo archivo modpyb.c y puede observarse en el algoritmo \ref{lst:delay}.
 
 \begin{lstlisting}[label={lst:delay},caption=Definición de la función de C que se ejecuta al invocar la función delay desde Python.] 
 STATIC mp_obj_t pyb_delay(mp_obj_t ms_in) {
@@ -44,12 +46,16 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_delay_obj, pyb_delay);
 
 \end{lstlisting}
 
-La función “delay” se encuentra definida dentro del mismo archivo modpyb.c y puede observarse en el algoritmo \ref{lst:delay}.
-Primero se define la función “pyb\_delay”, y luego mediante la macro “MP\_DEFINE\_CONST\_FUN\_OBJ\_1()” se define la struct “pyb\_delay\_obj”, la cual se utilizó para declarar en el array de ítems del módulo mencionado previamente.
+Primero se define la función “pyb\_delay”, y luego se la pasa como argumento a la macro “MP\_DEFINE\_CONST\_FUN\_OBJ\_1()” (línea 8) quien define la struct “pyb\_delay\_obj”, la cual se utilizó para declarar en el array de ítems del módulo pyb (algoritmo \ref{lst:struct_modpyb}) .
 
 La clase LED no se encuentra definida dentro del archivo sino que la misma se crea en un archivo aparte, llamado modpybled.c
 
-\begin{lstlisting}[label={lst:moduledef},caption=Inclusión de el módulo pyb a la lista de módulos disponibles.] 
+Para agregar el módulo “pyb” al intérprete, se debe editar el archivo mpconfigport.h y agregar las líneas indicadas en el algoritmo \ref{lst:moduledef}. De esta manera el intérprete cargará el módulo “pyb” cuando se ejecute:\\
+\textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}\\
+junto con todas sus funciones y clases, como la función “delay” o la clase LED.
+
+
+\begin{lstlisting}[label={lst:moduledef},caption=Inclusión del módulo pyb a la lista de módulos disponibles.] 
 extern const struct _mp_obj_module_t pyb_module;
 
 #define MICROPY_PORT_BUILTIN_MODULES \
@@ -58,17 +64,13 @@ extern const struct _mp_obj_module_t pyb_module;
 		
 \end{lstlisting}
 
-Para agregar el módulo “pyb” al intérprete, se debe editar el archivo mpconfigport.h y agregar las líneas indicadas en el algoritmo \ref{lst:moduledef}.De esta manera el intérprete cargará el módulo “pyb” cuando se ejecute:
-\begin{verbatim}
->>> import pyb
-\end{verbatim}
-junto con todas sus funciones y clases, como la función “delay” o la clase LED.
-
 
 %---------------------------------------------------------------------------------------------------------------------------------
 \section{Incorporación de una clase al módulo}
 
 A continuación se pasa a definir la clase LED, declarada dentro del módulo “pyb”. Para ello se crea el archivo modpybled.c en donde se define la struct “pyb\_led\_type” (la que se utilizó en el archivo modpyb.c).
+
+En el algoritmo \ref{lst:classdef} se define la clase LED declarando el campo “make\_new” (línea 5) el cual debe ser cargado con una función que hará las veces de constructor; al crear desde el código Python un objeto del tipo LED, se ejecutará la función “pyb\_led\_make\_new()” que está definida en este archivo.
 
 \begin{lstlisting}[label={lst:classdef},caption=Estructura que define la clase LED.] 
 const mp_obj_type_t pyb_led_type = {
@@ -80,7 +82,7 @@ const mp_obj_type_t pyb_led_type = {
 };
 \end{lstlisting}
 
-En el algoritmo \ref{lst:classdef} se define la clase LED declarando el campo “make\_new” el cual debe ser cargado con una función que hará las veces de constructor, es decir, al crear desde el código Python un objeto del tipo LED se ejecutará la función “pyb\_led\_make\_new()” que está definida en este archivo.
+El campo “locals\_dict” (línea 6) se carga con el array “pyb\_led\_locals\_dict” en donde están declarados todos los métodos y atributos de esta clase como lo muestra el algortimo \ref{lst:locals}.
 
 \begin{lstlisting}[label={lst:locals},caption=Definición de métodos de la clase LED.] 
 STATIC const mp_map_elem_t pyb_led_locals_dict_table[] = {
@@ -90,12 +92,12 @@ STATIC const mp_map_elem_t pyb_led_locals_dict_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_intensity), (mp_obj_t)&pyb_led_intensity_obj },
     { MP_OBJ_NEW_QSTR(MP_QSTR_value), (mp_obj_t)&pyb_led_value_obj },
 };
-STATIC MP_DEFINE_CONST_DICT(pyb_led_locals_dict, pyb_led_locals_dict_table);
+STATIC MP_DEFINE_CONST_DICT(pyb_led_locals_dict,         pyb_led_locals_dict_table);
 \end{lstlisting}
 
-El campo “locals\_dict” se carga con el array “pyb\_led\_locals\_dict” en donde están declarados todos los métodos y atributos de esta clase como lo muestra el algortimo \ref{lst:locals}
-
 En esta definición puede verse que se repite el mismo formato que para definir las funciones y clases del módulo “pyb”, los ítems poseen dos campos, el primero es el nombre de los métodos y el segundo los punteros a una struct que representa las funciones definidas en este mismo archivo.
+
+Tomando las definiciones en el array del algoritmo \ref{lst:locals} puede construirse la tabla \ref{tab:methfn}, en donde se resume que para cada método existe una struct que representa a una función de C así como también la función.
 
 \begin{table}[h]
 	\centering
@@ -116,20 +118,14 @@ En esta definición puede verse que se repite el mismo formato que para definir 
 	\label{tab:methfn}
 \end{table}
 
-Tomando las definiciones en la struct del algoritmo \ref{lst:locals} puede construirse la tabla \ref{tab:methfn}, en donde se resume que para cada método existe una struct que representa a una función de C así como también la función.
-
-Con estas definiciones se puede observar que al crear un objeto LED desde el código Python:
-\begin{verbatim}
->>> import pyb
->>> led = pyb.LED()
-\end{verbatim}
-
-se ejecutará la función “pyb\_make\_new()” y al ejecutarse el método “on()”:
-\begin{verbatim}
->>> led.on()
-\end{verbatim}
-
+Con estas definiciones se puede observar que al crear un objeto LED desde el código Python:\\
+\textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}\\
+\textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{led = pyb.LED()}\\
+se ejecutará la función “pyb\_make\_new()” y al ejecutarse el método “on()”:\\
+\textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{led.on()}\\
 se ejecutará la función “pyb\_led\_on()” a la cual hace referencia la struct “pyb\_led\_on\_obj”.
+
+Esta función y la struct se detallan a continuación en el algoritmo \ref{lst:ledon}. Dentro de ella es donde se ejecutan las funciones de la biblioteca uPython HAL para el manejo de los leds.
 
 \begin{lstlisting}[label={lst:ledon},caption=Función que se ejecuta al invocar el método on().] 
 mp_obj_t pyb_led_on(mp_obj_t self_in) {
@@ -138,12 +134,11 @@ mp_obj_t pyb_led_on(mp_obj_t self_in) {
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_led_on_obj, pyb_led_on);
 \end{lstlisting}
 
-Dentro de esta función (algoritmo \ref{lst:ledon}) es donde ejecutaremos las funciones de la biblioteca uPython HAL para el manejo de los leds.
-
 %---------------------------------------------------------------------------------------------------------------------------------
 \section{Definición de un método de una clase}
 
 A continuación se explicará cómo definir la función que hará las veces de constructor de la clase. Para ello se comienza por definir el tipo de dato pyb\_led\_obj\_t que representará un objeto LED como una struct de C.
+Luego se define un array de 6 variables de este tipo, ya que la clase LED podrá crear 6 objetos leds diferentes, porque la placa posee 6 leds. Como se muestra en el algoritmo \ref{lst:typeled} dentro de la struct del tipo pyb\_led\_obj\_t se debe definir un campo mp\_obj\_base\_t y luego todos los campos adicionales que se requieran, en este caso no se utiliza ninguno.
 
 \begin{lstlisting}[label={lst:typeled},caption=Definición de un array de objetos LED para C.] 
 typedef struct _pyb_led_obj_t {
@@ -163,8 +158,9 @@ STATIC const pyb_led_obj_t pyb_led_obj[] = {
 #define LED_ID(obj) ((obj) - &pyb_led_obj[0] + 1)
 \end{lstlisting}
 
-Luego se define un array de 6 variables de este tipo, ya que la clase LED podrá crear 6 objetos leds diferentes, porque la placa posee 6 leds. Como se muestra en el algoritmo \ref{lst:typeled} dentro de la struct del tipo pyb\_led\_obj\_t se debe definir un campo mp\_obj\_base\_t y luego todos los campos adicionales que se requieran, en este caso no se utiliza ninguno.
-Cada ítem del array (cada “objeto” LED) se carga con los valores definidos en el algoritmo \ref{lst:classdef}.
+Cada ítem del array (cada “objeto” LED) se carga con los valores definidos en el algoritmo \ref{lst:classdef} (líneas 5 a 12).
+
+En el algoritmo \ref{lst:constructor} se muestra el código de la función que se ejecuta al invocarse el constructor de la clase LED. En la línea 4 se realiza un chequeo de los argumentos recibidos, los cuales deben ser 1 (el número de led). En la línea 6 se lee el valor del argumento y se almacena en la variable led\_id. Con este valor, se chequea que el número de led sea válido (línea 8). En el caso de ser válido se devuelve el puntero del ítem del array de variables del tipo pyb\_led\_obj\_t que corresponde a la posición del número de led recibido como argumento (línea 13), de lo contrario se lanza una excepción indicando que el número de led no es correcto.
 
 \begin{lstlisting}[label={lst:constructor},caption=Definición de la función constructor.] 
 STATIC mp_obj_t pyb_led_make_new(mp_obj_t type_in, mp_uint_t n_args, 
@@ -183,9 +179,9 @@ STATIC mp_obj_t pyb_led_make_new(mp_obj_t type_in, mp_uint_t n_args,
 }
 \end{lstlisting}
 
-En el algoritmo \ref{lst:constructor} se muestra el código de la función que se ejecuta al invocarse el constructor de la clase LED. En la línea 4 se realiza un chequeo de los argumentos recibidos, los cuales deben ser 1 (el número de led). En la línea 6 se lee el valor del argumento y se almacena en la variable led\_id. Con este valor, se chequea que el número de led sea válido (línea 8). En el caso de ser válido se devuelve el puntero del ítem del array de variables del tipo pyb\_led\_obj\_t que corresponde a la posición del número de led recibido como argumento (línea 13), de lo contrario se lanza una excepción indicando que el número de led no es correcto.
-
 Esta variable devuelta en el constructor, es la que recibirán todas las funciones que se ejecuten al invocar los métodos del objeto Python, junto con sus argumentos si los tienen.
+
+En el algoritmo \ref{lst:fnon} se muestra el código que se ejecuta al invocarse el método “on()” de un objeto led. Como se mencionó previamente, se recibe como argumento el puntero del ítem del array que devolvió la función que actúa como constructor, es decir la referencia del item que representa al objeto led desde C. Llamamos a este puntero self\_in y mediante la macro LED\_ID (definida en el algoritmo \ref{lst:typeled}) se calcula el número de led que corresponde, para luego ejecutar la función de la capa uPython HAL que se encarga de cambiar dicho led de estado.
 
 \begin{lstlisting}[label={lst:fnon},caption=Definición de la función que se ejecuta al invocar el método on().] 
 mp_obj_t pyb_led_on(mp_obj_t self_in) {
@@ -195,7 +191,7 @@ mp_obj_t pyb_led_on(mp_obj_t self_in) {
 }
 \end{lstlisting}
 
-En el algoritmo \ref{lst:fnon} se muestra el código que se ejecuta al invocarse el método “on()” de un objeto led. Como se mencionó previamente, se recibe como argumento el puntero del ítem del array que devolvió la función que actúa como constructor, es decir la referencia del item que representa al objeto led desde C. Llamamos a este puntero self\_in y mediante la macro LED\_ID (definida en el algoritmo \ref{lst:typeled}) se calcula el número de led que corresponde, para luego ejecutar la función de la capa uPython HAL que se encarga de cambiar dicho led de estado.
+
 
 
 
