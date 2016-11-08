@@ -38,6 +38,6 @@
 \contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{33}{section.265}
 \contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{35}{appendix.274}
 \contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{35}{section.275}
-\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{36}{section.299}
-\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{38}{section.323}
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.361}
+\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{36}{section.307}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{38}{section.331}
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.369}
