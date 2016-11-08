@@ -105,7 +105,7 @@ La estructura de archivos referidos a los tests se muestra en la figura \ref{fig
 \section{Test unitarios para bibliotecas para el manejo de periféricos desde Python}
 \label{sec:testUnitariosPython}
 
-Para asegurar el correcto funcionamiento de las bibliotecas para el manejo de periféricos desde Python, se implementaron tests unitarios para todas las clases Python desarrolladas. Mediante estos tests se pretendió probar el uso de los metodos de dicha capa cubriendo la complejidad ciclomática de cada una de ellos.
+Para asegurar el correcto funcionamiento de las bibliotecas para el manejo de periféricos desde Python, se implementaron tests unitarios para todas las clases Python desarrolladas. Mediante estos tests se pretendió probar el uso de los métodos de dicha capa cubriendo la complejidad ciclomática de cada una de ellos.
 
 Una vez más teniendo como principal objetivo un consumo reducido de memoria de datos y de programa para la implementación de los tests, no se utilizó ninguna biblioteca de tests unitarios para Python, sino que se escribió una que posea lo mínimo indispensable para la ejecución de los tests, en un módulo llamado unittest. 
 
@@ -139,7 +139,7 @@ La clase posee muchos más métodos assertXXX para poder comparar todo tipo de d
 
 Para escribir un test, se debe crear una clase que herede de TestCase, en donde se deben definir los métodos test\_X siendo X un número comenzando de 1.
 
-En el algoritmo \ref{lst:testpyeeprom} se muestra un ejemplo de una clase TestEEPROM la cual hereda de TestCase y posee definido los métodos de los tests, en el ejemplo se muestra solo el método test\_1, el cual hace uso del método assertEqual, esto es posible debido a que la clase hereda de TestCase donde se encuentra definido el metodo.
+En el algoritmo \ref{lst:testpyeeprom} se muestra un ejemplo de una clase TestEEPROM la cual hereda de TestCase y posee definido los métodos de los tests, en el ejemplo se muestra solo el método test\_1, el cual hace uso del método assertEqual, esto es posible debido a que la clase hereda de TestCase.
 
 \begin{lstlisting}[label={lst:testpyeeprom},caption=Clase que hereda de TestCase donde se definen los métodos de test para la EEPROM., language={python}]
 from unittest import TestCase
@@ -189,7 +189,7 @@ def run(o):
 				i+=1
 \end{lstlisting}
 
-Si dentro de la ejecución del método m() un assert falla, se lanzará una excepción, y el bloque try-except la capturará y se imprimirá el mensaje de error. En el algoritmo \ref{lst:maintestpython} se observa la definición de una clase MainTest la cual posee un método run y dentro del mismo se colocaron todas las llamadas al método run de la clase TestCase, pasando como argumento un objeto de cada una de las clases que hereda de TestCase, las cuales se listan a continuación:
+Si dentro de la ejecución del método m() un assert falla, se lanzará una excepción, y el bloque try-except la capturará y se imprimirá el mensaje de error. En el algoritmo \ref{lst:maintestpython} se observa la definición de la clase MainTest la cual posee un método run y dentro del mismo se colocaron todas las llamadas al método run de la clase TestCase, pasando como argumento un objeto de cada una de las clases que hereda de TestCase, las cuales se listan a continuación:
 
 \begin{itemize}
 	\item \textbf{TestLeds}
@@ -329,9 +329,9 @@ Los tests escritos son generalmente de las ventanas, aunque también existen alg
 \section{Tests funcionales}
 \label{sec:testFuncionales}
 
-Para complementar los test unitarios implementados, se realizaron una serie de test funcionales que permitieron comprobar el correcto funcionamiento de las clases Python que puede usar el usuario para programar código Python en la EDU-CIAA-NXP y manejar los periféricos de la misma, así como también se escribieron test funcionales para chequear el comportamiento IDE una vez integradas las ventanas que se incorporaron al mismo.
+Para complementar los test unitarios implementados y probar la integración de todas las funcionalidades, se realizaron una serie de test funcionales que permitieron comprobar el correcto funcionamiento de las clases Python que puede usar el usuario para programar código Python en la EDU-CIAA-NXP y manejar los periféricos de la misma, así como también se escribieron test funcionales para chequear el comportamiento del IDE una vez integradas las ventanas que se incorporaron al mismo.
 
-Para escribir estos tests, primero se listaron los requerimientos asignándoles un nombre con la forma R-XX, por ejemplo R-01 o R-02, luego se escribieron los tests funcionales, cada uno cubrió al menos un requerimiento, y se nombraron con la forma TF-XX por ejemplo TF-01 o TF-02. Cada test consiste en una lista de pre-requisitos y una serie de pasos que el usuario debe seguir y que le indican qué hacer, y cual es el resultado esperado para cada paso. Al final del test se aclara qué requisitos cubre el test escrito.
+Para escribir estos tests, primero se listaron los requerimientos asignándoles un nombre con la forma R-XX, por ejemplo R-01 o R-02, luego se escribieron los tests funcionales, cada uno cubrió al menos un requerimiento, y se nombraron con la forma TF-XX por ejemplo TF-01 o TF-02. Cada test consiste en una lista de pre-requisitos y una serie de pasos que el usuario debe seguir y que le indican qué hacer, y cual es el resultado esperado para cada paso. Al final del test se aclara qué requisitos cubre el test realizado.
 
 Por último se dibujó la matriz de trazabilidad, la cual consiste en una tabla con los nombres de los requerimientos en las columnas y los nombres de los tests en las filas y en donde se indica qué test cubre qué requerimiento mediante una X.
 
@@ -390,3 +390,4 @@ print(hex(val))
 Requerimientos testeados:R-08
 
 
+Mediante el desarrollo de estos tests, se logró comprobar el correcto funcionamiento de la herramienta presentada en esta trabajo en su totalidad, incluyendo todas las partes de la misma. Si bien la implementación de test unitarios y funcionales no garantiza que el proyecto se encuentre completamente libre de errores, sí asegura haber realizado el proceso de desarrollo de una manera ordenada y profesional.

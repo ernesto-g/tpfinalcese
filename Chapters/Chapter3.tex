@@ -40,7 +40,7 @@ En este capítulo se detalla el desarrollo del firmware, software y documentaci�
 %----------------------------------------------------------------------------------------
 %	SECTION 1 : Diseño de Firmware
 %----------------------------------------------------------------------------------------
-\section{Diseño de Firmware}
+\section{Diseño del Firmware}
 
 \subsection{Punto de partida} 
 
@@ -117,7 +117,7 @@ Para una explicación detallada sobre el desarrollo de una clase Python desde c�
 \begin{figure}[ht]
   \centering
     \includegraphics[width=0.95\textwidth]{Figures/fig_files}
-  \caption{Relación entre las clases Python y los archivos del Firmware}
+  \caption{Relación entre las clases Python y los archivos del firmware}
   \label{fig:files}
 \end{figure}
 
@@ -176,7 +176,7 @@ uint32_t mp_hal_rs232_write(uint8_t const * const buffer,
 }
 \end{lstlisting}
 
-En este caso se observa que la función de la capa uPython HAL tiene un argumento que indica un retardo (delay) entre cada byte que se envía (línea 11), funcionalidad que no existe en la capa BSP, ya que solo se dispone de la función “Board\_UART\_Write()” la cual recibe el buffer a transmitir.
+En este caso se observa que la función de la capa uPython HAL tiene un argumento que indica un retardo (delay) entre cada byte que se envía (línea 2), funcionalidad que no existe en la capa BSP, ya que solo se dispone de la función “Board\_UART\_Write()” la cual recibe el buffer a transmitir.
 En esta función se evalúa el valor del argumento delay, y en el caso de que sea mayor a cero, se harán envíos de 1 byte y por cada envío se ejecutará la función “mp\_hal\_milli\_delay()” la cual boquea el código por el tiempo especificado.
 
 Las funciones de la capa uPython HAL tienen la forma:

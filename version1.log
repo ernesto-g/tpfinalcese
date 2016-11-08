@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.16)  6 NOV 2016 22:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  7 NOV 2016 23:03
 entering extended mode
 **./version1.tex
 (version1.tex
@@ -2962,21 +2962,21 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 362.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 362.
-LaTeX Info: Redefining \sptext on input line 370.
-LaTeX Info: Redefining \. on input line 370.
-LaTeX Info: Redefining \% on input line 370.
+LaTeX Info: Redefining \sptext on input line 368.
+LaTeX Info: Redefining \. on input line 368.
+LaTeX Info: Redefining \% on input line 368.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 370.
+(babel)             in language  on input line 368.
  [30])
 LaTeX Info: Redefining \sptext on input line 254.
 LaTeX Info: Redefining \. on input line 254.
@@ -3315,7 +3315,7 @@ LaTeX Info: Redefining \% on input line 31.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
 Package rerunfilecheck Info: File `version1.out' has not changed.
-(rerunfilecheck)             Checksum: F561CCE72AFB4E60F379530311895E1F;9099.
+(rerunfilecheck)             Checksum: 627F7EDF854B3AC8E43584EB6D30EF7E;9104.
 Package logreq Info: Writing requests to 'version1.run.xml'.
 \openout1 = `version1.run.xml'.
 
@@ -3323,7 +3323,7 @@ Package logreq Info: Writing requests to 'version1.run.xml'.
 Here is how much of TeX's memory you used:
  35606 strings out of 493334
  702261 string characters out of 3139245
- 988756 words of memory out of 3000000
+ 987756 words of memory out of 3000000
  38297 multiletter control sequences out of 15000+200000
  54022 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3332,7 +3332,7 @@ Here is how much of TeX's memory you used:
 cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on version1.pdf (54 pages, 2352526 bytes).
+Output written on version1.pdf (54 pages, 2353263 bytes).
 PDF statistics:
  1039 PDF objects out of 1200 (max. 8388607)
  426 named destinations out of 1000 (max. 500000)
