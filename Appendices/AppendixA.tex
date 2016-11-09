@@ -143,7 +143,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_led_on_obj, pyb_led_on);
 \end{lstlisting}
 
 %---------------------------------------------------------------------------------------------------------------------------------
-\section{Definición de un método de una clase}
+\section{Definición del constructor de una clase}
 
 A continuación se explicará cómo definir la función que hará las veces de constructor de la clase. Para ello se comienza por definir el tipo de dato pyb\_led\_obj\_t que representará un objeto LED como una struct de C.
 Luego se define un array de 6 variables de este tipo, ya que la clase LED podrá crear 6 objetos leds diferentes, porque la placa posee 6 leds. Como se muestra en el algoritmo \ref{lst:typeled} dentro de la struct del tipo pyb\_led\_obj\_t se debe definir un campo mp\_obj\_base\_t y luego todos los campos adicionales que se requieran, en este caso no se utiliza ninguno.
@@ -191,6 +191,8 @@ STATIC mp_obj_t pyb_led_make_new(mp_obj_t type_in, mp_uint_t n_args,
 
 Esta variable devuelta en el constructor, es la que recibirán todas las funciones que se ejecuten al invocar los métodos del objeto Python, junto con sus argumentos si los tienen.
 
+\section{Definición de un método de una clase}
+
 En el algoritmo \ref{lst:fnon} se muestra el código que se ejecuta al invocarse el método “on()” de un objeto led. Como se mencionó previamente, se recibe como argumento el puntero del ítem del array que devolvió la función que actúa como constructor, es decir la referencia del item que representa al objeto led desde C. Llamamos a este puntero self\_in y mediante la macro LED\_ID (definida en el algoritmo \ref{lst:typeled}) se calcula el número de led que corresponde, para luego ejecutar la función de la capa uPython HAL que se encarga de cambiar dicho led de estado.
 
 \begin{lstlisting}[label={lst:fnon},caption=Definición de la función que se ejecuta al invocar el método on().] 
@@ -201,7 +203,7 @@ mp_obj_t pyb_led_on(mp_obj_t self_in) {
 }
 \end{lstlisting}
 
-
+De esta forma se escriben todos los métodos de la clase, cada uno de ellos utilizará la capa uPython HAL para acceder al hardware del microcontrolador.
 
 
 

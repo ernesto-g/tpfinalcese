@@ -39,5 +39,6 @@
 \contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{35}{appendix.274}
 \contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{35}{section.275}
 \contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{36}{section.307}
-\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{38}{section.331}
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.369}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n del constructor de una clase}{38}{section.331}
+\contentsline {section}{\numberline {A.4}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{39}{section.363}
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.370}
