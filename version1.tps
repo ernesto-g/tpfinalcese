@@ -18,7 +18,7 @@ Document=Chapters\Chapter4.tex
 
 [Frame0_View0,0]
 TopLine=442
-Cursor=23854
+Cursor=24048
 
 [Frame1]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=Chapters\Chapter3.tex
 
 [Frame3_View0,0]
-TopLine=193
+TopLine=194
 Cursor=12832
 
 [Frame4]
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=Appendices\AppendixA.tex
 
 [Frame5_View0,0]
-TopLine=171
-Cursor=10278
+TopLine=210
+Cursor=12866
 
 [Frame6]
 Flags=0
@@ -130,5 +130,5 @@ Cursor=4638
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=5
+ActiveFrame=0
 

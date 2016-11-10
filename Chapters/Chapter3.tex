@@ -59,7 +59,7 @@ Esto permite ejecutar programas que no tengan interacción con el resto del hard
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{print(“Hola mundo”)}
 
-Una vez ingresado el código, el interprete lo evalúa y ejecuta, y el texto "Hola mundo" se transmite por el stdout, el cual está ligado a la UART conectada al conversor serie-USB, por lo que el texto "Hola mundo" se muestra por la terminal de la PC.
+Una vez ingresado el código, el interprete lo evalúa y ejecuta, y el texto “Hola mundo” se transmite por el stdout, el cual está ligado a la UART conectada al conversor serie-USB, por lo que el texto “Hola mundo” se muestra por la terminal de la PC.
 
 De la misma forma se puede utilizar el sdtin con sentencias como:
 
@@ -245,7 +245,7 @@ Se modificó el código del proyecto EDILE y se incorporó una barra de botones 
   \label{fig:idebuttons}
 \end{figure}
 
-En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o que botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada.
+En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o qué botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada.
 
 \begin{figure}[ht]
   \centering
@@ -268,7 +268,7 @@ En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase
 	\item \textbf{XMODEM}: biblioteca que implementa el protocolo \textit{xmodem}\footnote{xmodem: Protocolo simple de transferencia de datos por medio de paquetes de 128bytes creado en 1977.} y permite el envío del archivo a la placa.	
 \end{itemize}
 
-El diseño de las ventanas y sus contenidos fueron creados con el programa Glade\cite{glade} utilizado para crear ventanas para la biblioteca gráfica pyGTK.
+El diseño de las ventanas y sus contenidos fueron creados con el programa Glade \cite{glade} utilizado para crear ventanas para la biblioteca gráfica pyGTK.
 
 La lógica de cada ventana se encuentra implementada dentro de cada una de las clases, las cuales utilizan la biblioteca pyGTK para construir la interfaz gráfica por medio de un archivo XML (extensión .glade) donde se define el formato de la ventana y los componentes que posee dentro (Botones, etc.)
 
@@ -310,12 +310,12 @@ El firmware irá agregando los datos recibidos al final de la memoria donde se g
 %----------------------------------------------------------------------------------------
 \section{Documentación}
 
-Como se indica en el capítulo \ref{Chapter1}, el desarrollo del firmware y del software no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentación y los ejemplos adecuados. Esta es la razón por la que el IDE posee una ventana de Snippets con porciones de código de ejemplo, sin embargo esto no es suficiente, ya que no existe explicación alguna de dichas porciones de código. 
+Como se indicó en el capítulo \ref{Chapter1}, el desarrollo del firmware y del software no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentación y los ejemplos adecuados. Esta es la razón por la que el IDE posee una ventana de Snippets con porciones de código de ejemplo, sin embargo esto no es suficiente, ya que no existe explicación alguna de dichas porciones de código. 
 Además de los Snippets, se agregaron proyectos de ejemplo y documentación de las clases y métodos desarrollados para el manejo de los periféricos.
 
 \subsection{Proyectos de ejemplo} 
 
-Para la publicación de ejemplos completos, se creó un repositorio público en GitHub\cite{repoejemplos} en donde pueden descargarse diferentes tipos de proyectos con una explicación detallada del código que se implementó. Los ejemplos se dividen en tres categorías:
+Para la publicación de ejemplos completos, se creó un repositorio público en GitHub \cite{repoejemplos} en donde pueden descargarse diferentes tipos de proyectos con una explicación detallada del código que se implementó. Los ejemplos se dividen en tres categorías:
 
 \begin{itemize}
 	\item \textbf{Inicial}: cubren conceptos básicos de programación y del lenguaje Python.
@@ -331,7 +331,7 @@ La idea es que la comunidad que utilice esta plataforma para desarrollar trabajo
 
 Para acompañar a los proyectos de ejemplo y dar una base sólida del uso y soporte de los periféricos, se escribió una documentación detallada de cada clase con todos sus métodos, escribiendo también uno o más ejemplos del uso de algunos métodos en particular.
 
-Esta documentación se escribió en la página del proyecto CIAA, en la sección Python\cite{bibpython}, la cual también es de acceso público, cumpliendo así con uno de los requerimientos mencionados en el capítulo \ref{Chapter2}. El link a esta página se encuentra accesible desde la ventana de Snippets del IDE.
+Esta documentación se escribió en la página del proyecto CIAA, en la sección Python \cite{bibpython}, la cual también es de acceso público, cumpliendo así con uno de los requerimientos mencionados en el capítulo \ref{Chapter2}. El link a esta página se encuentra accesible desde la ventana de Snippets del IDE.
 
 
 
