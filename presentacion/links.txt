@@ -1,0 +1,3 @@
+https://wiki.scratch.mit.edu/wiki/Hardware_That_Can_Connect_to_Scratch
+
+https://www.makeblock.es/tutoriales/programar_con_scratch/
