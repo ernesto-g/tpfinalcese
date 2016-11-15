@@ -8,37 +8,35 @@
 \contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n Espec\IeC {\'\i }fica}{5}{chapter.14}
 \contentsline {section}{\numberline {2.1}La plataforma de Hardware}{5}{section.15}
 \contentsline {section}{\numberline {2.2}Utilizaci\IeC {\'o}n de MicroPython}{6}{section.20}
-\contentsline {section}{\numberline {2.3}Arquitectura del Firmware}{7}{section.24}
-\contentsline {section}{\numberline {2.4}Arquitectura del Software}{8}{section.27}
-\contentsline {section}{\numberline {2.5}Requerimientos}{10}{section.29}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{13}{chapter.50}
-\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o del Firmware}{13}{section.51}
-\contentsline {subsection}{\numberline {3.1.1}Punto de partida}{13}{subsection.52}
-\contentsline {subsection}{\numberline {3.1.2}Creaci\IeC {\'o}n de bibliotecas Python: M\IeC {\'o}dulos y Clases}{14}{subsection.55}
-\contentsline {subsection}{\numberline {3.1.3}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{15}{subsection.60}
-\contentsline {subsection}{\numberline {3.1.4}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{17}{subsection.79}
-\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{18}{section.81}
-\contentsline {subsection}{\numberline {3.2.1}Punto de partida}{18}{subsection.82}
-\contentsline {subsection}{\numberline {3.2.2}Dise\IeC {\~n}o del IDE}{19}{subsection.84}
-\contentsline {subsection}{\numberline {3.2.3}Env\IeC {\'\i }o del archivo a la placa}{21}{subsection.99}
-\contentsline {section}{\numberline {3.3}Documentaci\IeC {\'o}n}{22}{section.101}
-\contentsline {subsection}{\numberline {3.3.1}Proyectos de ejemplo}{23}{subsection.102}
-\contentsline {subsection}{\numberline {3.3.2}Documentaci\IeC {\'o}n de las bibliotecas implementadas}{23}{subsection.103}
-\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{25}{chapter.104}
-\contentsline {section}{\numberline {4.1}Tests unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{25}{section.105}
-\contentsline {section}{\numberline {4.2}Test unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde Python}{28}{section.157}
-\contentsline {section}{\numberline {4.3}Ejecuci\IeC {\'o}n de los tests sobre la placa}{31}{section.217}
-\contentsline {subsection}{\numberline {4.3.1}Requerimientos para la ejecuci\IeC {\'o}n de los tests.}{31}{subsection.241}
-\contentsline {section}{\numberline {4.4}Tests Unitarios para ventanas que componen el IDE}{32}{section.243}
-\contentsline {section}{\numberline {4.5}Tests funcionales}{34}{section.250}
-\contentsline {subsection}{\numberline {4.5.1}Tests funcionales para el IDE}{34}{subsection.251}
-\contentsline {subsection}{\numberline {4.5.2}Tests funcionales para clases Python de manejo de perif\IeC {\'e}ricos}{34}{subsection.256}
-\contentsline {chapter}{\numberline {5}Conclusiones}{37}{chapter.265}
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{37}{section.266}
-\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{37}{section.268}
-\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{39}{appendix.277}
-\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{39}{section.278}
-\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{40}{section.310}
-\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n del constructor de una clase}{42}{section.334}
-\contentsline {section}{\numberline {A.4}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{43}{section.366}
-\contentsline {chapter}{Bibliograf\'{\i }a}{45}{appendix*.373}
+\contentsline {section}{\numberline {2.3}Firmware: Punto de partida}{7}{section.22}
+\contentsline {section}{\numberline {2.4}Software: Punto de partida}{8}{section.27}
+\contentsline {section}{\numberline {2.5}Requerimientos}{9}{section.29}
+\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{11}{chapter.50}
+\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o del Firmware}{11}{section.51}
+\contentsline {subsection}{\numberline {3.1.1}Creaci\IeC {\'o}n de bibliotecas Python: M\IeC {\'o}dulos y Clases}{12}{subsection.54}
+\contentsline {subsection}{\numberline {3.1.2}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{14}{subsection.59}
+\contentsline {subsection}{\numberline {3.1.3}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{15}{subsection.78}
+\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{17}{section.80}
+\contentsline {subsection}{\numberline {3.2.1}Dise\IeC {\~n}o del IDE}{18}{subsection.82}
+\contentsline {subsection}{\numberline {3.2.2}Env\IeC {\'\i }o del archivo a la placa}{20}{subsection.97}
+\contentsline {section}{\numberline {3.3}Documentaci\IeC {\'o}n}{21}{section.99}
+\contentsline {subsection}{\numberline {3.3.1}Proyectos de ejemplo}{22}{subsection.100}
+\contentsline {subsection}{\numberline {3.3.2}Documentaci\IeC {\'o}n de las bibliotecas implementadas}{22}{subsection.101}
+\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{23}{chapter.102}
+\contentsline {section}{\numberline {4.1}Tests unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{23}{section.103}
+\contentsline {section}{\numberline {4.2}Test unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde Python}{26}{section.155}
+\contentsline {section}{\numberline {4.3}Ejecuci\IeC {\'o}n de los tests sobre la placa}{29}{section.215}
+\contentsline {subsection}{\numberline {4.3.1}Requerimientos para la ejecuci\IeC {\'o}n de los tests.}{29}{subsection.239}
+\contentsline {section}{\numberline {4.4}Tests Unitarios para ventanas que componen el IDE}{30}{section.241}
+\contentsline {section}{\numberline {4.5}Tests funcionales}{32}{section.248}
+\contentsline {subsection}{\numberline {4.5.1}Tests funcionales para el IDE}{32}{subsection.249}
+\contentsline {subsection}{\numberline {4.5.2}Tests funcionales para clases Python de manejo de perif\IeC {\'e}ricos}{32}{subsection.254}
+\contentsline {chapter}{\numberline {5}Conclusiones}{35}{chapter.263}
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{35}{section.264}
+\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{35}{section.266}
+\contentsline {chapter}{\numberline {A}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo y clase Python desde c\IeC {\'o}digo C}{37}{appendix.275}
+\contentsline {section}{\numberline {A.1}Creaci\IeC {\'o}n de un m\IeC {\'o}dulo}{37}{section.276}
+\contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{38}{section.308}
+\contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n del constructor de una clase}{40}{section.332}
+\contentsline {section}{\numberline {A.4}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{41}{section.364}
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.371}
