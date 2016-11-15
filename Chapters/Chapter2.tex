@@ -49,7 +49,7 @@ El proyecto MicroPython \cite{micropython} es un desarrollo de firmware realizad
 
 Las características del microcontrolador que posee esta placa, son similares a las de la EDU-CIAA-NXP (Cortex-M4@168Mhz).
 
-Para obtener la capacidad de ejecutar código Python en la EDU-CIAA-NXP, se adoptó el trabajo de Martin Ribelotta, quien realizó el port del proyecto MicroPython mencionado previamente para esta plataforma \cite{portmicropythonribelotta}.
+Para obtener la capacidad de ejecutar código Python en la EDU-CIAA-NXP, se adoptó el trabajo de Martin Ribelotta, quien realizó el \textit{port}\footnote{port: Realizar la programación necesaria para que un programa se ejecute en otra plataforma.} del proyecto MicroPython mencionado previamente para esta plataforma \cite{portmicropythonribelotta}.
 Este port constaba de la inicialización del intérprete, el cual permitía ejecutar código Python, la inicialización y configuración de la \textit{Garbage Collector}\footnote{Garbage Collector: Gestor automático de memoria dinámica.} y la implementación de un filesystem FAT12 embebido en la memoria de programa del microcontrolador, de manera de poder escribir en forma permanente el código Python en la memoria y luego ser ejecutado desde allí. 
 
 %El port no contaba con la implementación para el manejo de los periféricos del microcontrolador, el autor comenzó a desarrollar el soporte para algunos periféricos antes de dar comienzo a este trabajo, dicho soporte se tomó como punto de partida y se reescribió y mejoró en gran medida para lograr la calidad del firmware deseada al implementar técnicas de ingeniería de software.
@@ -64,8 +64,8 @@ A continuación se detalla la arquitectura del firmware implementado en este tra
 
 \begin{itemize}
 	\item \textbf{EDU-CIAA-NXP}: representa el hardware donde se ejecuta el firmware.
-	\item \textbf{Intérprete uPython}: representa el código del proyecto MicroPython, mediante el cual es posible interpretar y ejecutar el código Python escrito por el usuario.
-	\item \textbf{Código Python programado por el usuario}: representa el código que el usuario escribe en el IDE y graba en la placa para su posterior ejecución.
+	\item \textbf{Intérprete uPython (Lenguaje C)}: representa el código del proyecto MicroPython, mediante el cual es posible interpretar y ejecutar el código Python escrito por el usuario.
+	\item \textbf{Código Python programado por el usuario (Lenguaje Python)}: código que el usuario escribe en el IDE y graba en la placa para su ejecución.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -75,15 +75,15 @@ A continuación se detalla la arquitectura del firmware implementado en este tra
   \label{fig:firmwareArq}
 \end{figure}
 
-Estos tres bloques mencionados representan el firmware del proyecto MicroPython creado por Martin Ribelotta que se tomó como punto de partida para el desarrollo de este trabajo. 
+Estos dos bloques mencionados (intérprete uPython y código Python programado por el usuario) representan el firmware del proyecto MicroPython creado por Martin Ribelotta que se tomó como punto de partida para el desarrollo de este trabajo. 
 
 A continuación se detallan los bloques que se han desarrollado:
 
 \begin{itemize}
-	\item \textbf{Board Support Package}: aquí se encuentra la biblioteca que permite el acceso, uso e inicialización de los periféricos del microcontrolador.
-	\item \textbf{uPython HAL}: capa de abstracción del hardware. El proyecto MicroPython utiliza esta capa para abstraer funciones específicas del hardware y que el código que utilice los periféricos sea portable.
-	\item \textbf{Módulos Python de periféricos}: para que el usuario pueda utilizar los periféricos desde el código Python, se necesita escribir un código en lenguaje C que represente una clase Python, en dicho código se consigue ejecutar funciones de C al ejecutar funciones de Python, de esta manera se logra utilizar la capa uPython HAL desde el código Python escrito por el usuario.
-	\item \textbf{Módulos Python (Frozen)}: también es posible escribir bibliotecas Python directamente en lenguaje Python, y que las mismas formen parte del firmware. Este trabajo incluyó una biblioteca escrita en Python que permite la ejecución de tests unitarios.
+	\item \textbf{Board Support Package (Lenguaje C)}: aquí se encuentra la biblioteca que permite el acceso, uso e inicialización de los periféricos del microcontrolador.
+	\item \textbf{uPython HAL (Lenguaje C)}: capa de abstracción del hardware. El proyecto MicroPython utiliza esta capa para abstraer funciones específicas del hardware, logrando que la programación de los periféricos sea portable.
+	\item \textbf{Módulos Python de periféricos (Lenguaje C)}: Esta capa de software es la encargada de implementar en lenguaje C las clases de Python necesarias para el manejo de periféricos. De esta manera se logra realizar el \textit{binding}\footnote{binding: Adaptación de una biblioteca para ser usada en un lenguaje de programación distinto de aquél en el que ha sido escrita.} entre el código Python que escribirá el usuario, y el código en C, permitiendo ejecutar desde Python funciones en C de la capa uPython HAL.
+	\item \textbf{Módulos Python (Frozen) (Lenguaje Python)}: también es posible escribir bibliotecas Python directamente en lenguaje Python, y que las mismas formen parte del firmware. Para ello en tiempo de compilación se genera un array de código C que contiene el texto del código Python escrito y el mismo puede ser ejecutado por el intérprete. Es igual que el código Python que escribe el usuario, pero fijo dentro del Firmware. Este trabajo incluyó una biblioteca escrita en Python que permite la ejecución de tests unitarios.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ A continuación se detallan los bloques que se han desarrollado:
 \section{Arquitectura del Software}
 \label{sec:softwareArq}
 
-A continuación se detallará la arquitectura del entorno de desarrollo indicada en la figura \ref{fig:softwareArq}. En la misma se describe la utilización de una ventana principal en donde se puede editar el archivo de código Python, y mediante un mecanismo de plug-ins se indica la incorporación de ventanas específicas que tienen que ver con el proceso de grabar el código en la EDU-CIAA-NXP. 
+A continuación se detallará la arquitectura del entorno de desarrollo indicada en la figura \ref{fig:softwareArq}. En la misma se describe la utilización de la ventana principal en donde se puede editar el archivo de código Python, y mediante un mecanismo de plug-ins se indica la incorporación de ventanas específicas que tienen que ver con el proceso de grabar el código en la EDU-CIAA-NXP. 
 
 \begin{figure}[ht]
   \centering
@@ -103,14 +103,14 @@ A continuación se detallará la arquitectura del entorno de desarrollo indicada
 También se observan los siguientes módulos de software que componen el IDE:
 
 \begin{itemize}
-	\item \textbf{Archivo .py}: representa el archivo que se abre, edita y guarda usando el IDE. En este archivo se escribirá el código Python que se grabará y ejecutará en la placa.
-	\item \textbf{Editor de archivo .py}: representa la capa gráfica del programa en donde se escribe el código Python.
+	\item \textbf{Archivo .py}: representa el archivo de texto que se abre, edita y guarda usando el IDE. En este archivo se escribirá el código Python que se grabará y ejecutará en la placa.
+	\item \textbf{Editor de archivo .py}: representa la interfaz gráfica del programa en donde se escribe el código Python.
 	\item \textbf{Lógica del editor}: representa las funciones que permiten que la ventana principal donde se escribe el código funcione como un editor de texto.
 	\item \textbf{Sistema de plug-ins}: la lógica del editor incorpora un sistema de plug-ins mediante el cual se agregan opciones al menú y permiten ejecutar ventanas adicionales a la principal.
 	\item \textbf{Menú para la EDU-CIAA-NXP}: aquí se encuentran las opciones que permiten interactuar con la placa y los ejemplos.
 \end{itemize}
 
-Dentro de las ventanas agregadas, se encuentran las que permiten la grabación del código en la placa, la ejecución de una terminal serial, mediante la cual es posible visualizar el standard output del código Python e ingresar datos por el standard input, una ventana con una lista de porciones de código de ejemplo (Snippets) y una ventana de configuración en donde se declara el puerto serie de la PC a utilizar.
+Dentro de las ventanas agregadas, se encuentran las que permiten la grabación del código en la placa, la ejecución de una terminal serial, mediante la cual es posible visualizar el standard output del código Python e ingresar datos por el standard input, una ventana con una lista de porciones de código de ejemplo (Snippets) y una ventana de configuración en donde se indica el puerto serie de la PC a utilizar.
 A continuación se detallan los módulos de software correspondientes a las ventanas mencionadas previamente:
 
 \begin{itemize}
@@ -136,7 +136,7 @@ El desarrollo de este IDE se basó en el IDE del proyecto EDILE \cite{edile}, y 
 \section{Requerimientos}
 \label{sec:req}
 
-A continuación se detallan los requerimientos planteados para la realización de este trabajo.
+En base al estado actual de las herramientas elegidas para el desarrollo del presente trabajo, se enumeran a continuación los requerimientos:
 
 Grupo de requerimientos referidos a las bibliotecas Python:
 \begin{enumerate}

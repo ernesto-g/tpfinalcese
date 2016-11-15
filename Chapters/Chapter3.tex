@@ -74,19 +74,19 @@ También se pueden realizar operaciones matemáticas como por ejemplo:
 
 Este último ejemplo imprime por la terminal el valor 30.
 
-Pero para interactuar con los periféricos como los pulsadores y los leds, solo existía una versión preliminar de algunas bibliotecas Python creadas previamente por el autor de este trabajo, las cuales se tomaron como punto de partida para el desarrollo profesional de las mismas verificando su correcto funcionamiento por medio de test unitarios y funcionales los cuales son explicados en el capítulo \ref{Chapter4}.
+Pero para interactuar con los periféricos como los pulsadores y los leds, solo existía una versión preliminar de algunas bibliotecas Python creadas previamente por el autor de este trabajo, las cuales se tomaron como punto de partida para el desarrollo profesional de las mismas verificando su correcto funcionamiento por medio de test unitarios y funcionales los cuales se desarrollan en el capítulo \ref{Chapter4}.
 
 %----------------------------------------------------------------------------------------
 
 \subsection{Creación de bibliotecas Python: Módulos y Clases} 
 
-Si bien es posible definir funciones sueltas sin contexto, en Python también es posible la declaración de clases, al ser un lenguaje multiparadigma, el mismo contempla la Programación Orientada a Objetos (POO), mediante la cual se modelaron los periféricos del microcontrolador.
+El lenguaje Python es un lenguaje multiparadigma, de modo que permite definir funciones sueltas (sin contexto) así como “Clases” pertenecientes al paradigma de programación orientada a objetos (POO). Todos los periféricos del microcontrolador se modelaron como clases.
 
-En Python, las clases se agrupan dentro de módulos. Un módulo Python es un conjunto de clases, para poder utilizar una clase que se encuentra dentro de un módulo, deberemos incluir dicho módulo en nuestro programa, mediante la sentencia import, por ejemplo:
+En Python, las clases se agrupan dentro de módulos. Para poder utilizar una clase que se encuentra dentro de un módulo, se debe incluir dicho módulo en un programa, mediante la sentencia import, por ejemplo:
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}
 
-El módulo pyb tiene dentro definidas las clases que representan los periféricos del microcontrolador. Una vez incluído el módulo, podremos utilizar las clases definidas dentro de él para crear objetos.
+El módulo pyb tiene define en su interior las clases que representan los periféricos del microcontrolador. Una vez incluído el módulo, se pueden utilizar sus clases para crear objetos.
 Por ejemplo, para la creación de un objeto que representa el led 1 de la EDU-CIAA-NXP, se escribe:
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}\\
@@ -95,9 +95,9 @@ Por ejemplo, para la creación de un objeto que representa el led 1 de la EDU-CI
 
 En este ejemplo se utiliza la clase LED para crear el objeto led, la misma recibe como argumento de su constructor, el número de led que el objeto manejará, en este caso, el led 1.
 
-Para poder manejar un periférico del microcontrolador (GPIOs, UART, etc.) es necesario que al ejecutar una o más funciones de código Python, se ejecute una o más funciones de código C, en la cual se coloca el código necesario para la utilización del periférico en cuestión.
+Para poder manejar un periférico del microcontrolador (GPIOs, UART, etc.) es necesario que al ejecutar una o más funciones de código Python, se ejecute una o más funciones de código C (binding), en la cual se coloca el código necesario para la utilización del periférico en cuestión.
 
-En la figura \ref{fig:calls} se muestra un diagrama donde se aprecia el \textit{trace}\footnote{Tracing: Log que muestra información acerca de la ejecución de un programa junto con las llamadas a funciones.} de las llamadas a función que se ejecutan cuando el usuario ejecuta desde código Python el método on() de un objeto LED.
+En la figura \ref{fig:calls} se muestra un diagrama de secuencia donde se aprecia el \textit{trace}\footnote{Tracing: Log que muestra información acerca de la ejecución de un programa junto con las llamadas a funciones.} de las llamadas a función que se ejecutan cuando el usuario ejecuta desde código Python el método on() de un objeto LED.
 
 \begin{figure}[ht]
   \centering
@@ -191,7 +191,7 @@ Tanto la biblioteca BSP como la capa uPython HAL pueden utilizarse de forma aisl
 
 \subsection{Diseño de bibliotecas para el manejo de periféricos desde el código Python}
 
-Se pretendió modelar cada periférico mediante una clase, si bien era posible definir funciones pertenecientes al módulo pyb, sin definir clases, por ejemplo:
+Se modeló cada periférico mediante una clase, si bien era posible definir funciones pertenecientes al módulo pyb, sin definir clases, por ejemplo:
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{pyb.setLed(1,0)}
 
@@ -200,7 +200,7 @@ Se decidió respetar el modelo orientado a objetos por las siguientes razones:
 \begin{itemize}
 	\item El proyecto MicroPython original utiliza este modelo para acceder a los periféricos.
 	\item Ayuda al entendimiento de programación orientada a objetos (POO), en donde la premisa más básica es representar objetos del mundo real, en este caso un objeto Switch representará un pulsador físico en la placa, generando un ejemplo muy claro del concepto.
-	\item Para el uso básico y explicaciones de algoritmo, no es necesario tener los conocimientos de POO, simplemente se trata al objeto como una variable, y no se generan grandes trabas en el momento del aprendizaje.
+	\item Para el uso básico y explicaciones de algoritmo, no es necesario tener los conocimientos de POO, simplemente puede tratarse al objeto como una variable más.
 \end{itemize}
 
 En la figura \ref{fig:classes} se observa el diagrama de clases definido para el módulo pyb, en donde se encuentran las clases que representan los periféricos del microcontrolador junto con los métodos desarrollados.
@@ -228,7 +228,7 @@ Para el desarrollo del IDE se tomó como base el proyecto EDILE \cite{edile} el 
   \label{fig:edile}
 \end{figure}
 
-Debido a que se encuentra programado en Python es muy simple ejecutar el programa en diferentes sistemas operativos, de modo que utilizando este proyecto se puede cumplir con uno de los requerimientos planteados el cual decía que el software debe ser multiplataforma.
+Debido a que se encuentra programado en Python es muy simple ejecutar el programa en diferentes sistemas operativos, de modo que utilizando este proyecto se cumple con el requerimiento de proveer un software multiplataforma.
 
 Este procesador de texto posee un sistema de plug-ins mediante el cual se simplifica la incorporación de menúes que ejecuten ventanas adicionales que cumplan con cierta funcionalidad, de modo que el diseño de software que se realizó en el presente trabajo fue la incorporación de dichas ventanas y funcionalidades al editor, junto con modificaciones para que solo trabaje con archivos de código Python (.py) y algunas correcciones en el sistema de plug-ins.
 
@@ -245,7 +245,7 @@ Se modificó el código del proyecto EDILE y se incorporó una barra de botones 
   \label{fig:idebuttons}
 \end{figure}
 
-En la figura \ref{fig:ideclasses} se observan las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o qué botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada.
+En la figura \ref{fig:ideclasses} se ilustran las clases desarrolladas. La clase que funciona como un plug-in del editor, es la llamada mnu\_EDUCIAA, en ella se ejecutan métodos según qué opción de menú eligió el usuario (o qué botón presionó). Esta clase hace las veces de \textit{controller}\footnote{controller: Componente del patrón de diseño MVC el cual se encarga de recibir eventos y realizar acciones.} y dispara las diferentes ventanas según la opción seleccionada.
 
 \begin{figure}[ht]
   \centering
@@ -300,7 +300,7 @@ En él se observa que al reiniciar la placa mediante su pulsador de reset, el fi
   \label{fig:secuencexmodem}
 \end{figure}
 
-Este proceso continúa hasta que el IDE envía todas las tramas que corresponden al contenido del archivo que se esta enviando.
+Este proceso continúa hasta que el IDE envía todas las tramas que corresponden al contenido del archivo a transferir.
 El firmware irá agregando los datos recibidos al final de la memoria donde se grabaron los datos de la trama anterior.
 
 
@@ -310,8 +310,7 @@ El firmware irá agregando los datos recibidos al final de la memoria donde se g
 %----------------------------------------------------------------------------------------
 \section{Documentación}
 
-Como se indicó en el capítulo \ref{Chapter1}, el desarrollo del firmware y del software no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentación y los ejemplos adecuados. Esta es la razón por la que el IDE posee una ventana de Snippets con porciones de código de ejemplo, sin embargo esto no es suficiente, ya que no existe explicación alguna de dichas porciones de código. 
-Además de los Snippets, se agregaron proyectos de ejemplo y documentación de las clases y métodos desarrollados para el manejo de los periféricos.
+Como se indicó en el capítulo \ref{Chapter1}, el desarrollo del firmware y del software no es suficiente para que un proyecto educativo tenga el impacto deseado, sino que debe estar acompañado por la documentación y los ejemplos adecuados. Esta es la razón por la que el IDE posee una ventana de Snippets con porciones de código de ejemplo, sin embargo esto no es suficiente, ya que no existe explicación alguna de dichas porciones de código, en consecuencia se agregaron proyectos de ejemplo y documentación de las clases y métodos desarrollados para el manejo de los periféricos.
 
 \subsection{Proyectos de ejemplo} 
 
@@ -320,18 +319,18 @@ Para la publicación de ejemplos completos, se creó un repositorio público en 
 \begin{itemize}
 	\item \textbf{Inicial}: cubren conceptos básicos de programación y del lenguaje Python.
 	\item \textbf{Intermedio}: proyectos que requieren conocimientos intermedios de programación y básicos de electrónica.
-	\item \textbf{Avanzado}: proyectos que requieren conocimientos avanzados de programación y electrónica..	
+	\item \textbf{Avanzado}: proyectos que requieren conocimientos avanzados de programación y electrónica.	
 \end{itemize}
 
 Cada proyecto es acompañado por un archivo README.md en donde se aclaran las funciones y sentencias utilizadas, y se explica el funcionamiento del código paso por paso.
 
-La idea es que la comunidad que utilice esta plataforma para desarrollar trabajos, en escuelas secundarias o universidades, aporte los trabajos implementados al repositorio, para que otros estudiantes puedan tomarlos como base para nuevos proyectos o simplemente para aprender de lo desarrollado.
+Se desea que la comunidad que utilice esta plataforma para desarrollar trabajos, en escuelas secundarias o universidades, aporte dichos trabajos implementados al repositorio, para que otros estudiantes puedan tomarlos como base para nuevos proyectos o simplemente para aprender de lo desarrollado.
 
 \subsection{Documentación de las bibliotecas implementadas} 
 
-Para acompañar a los proyectos de ejemplo y dar una base sólida del uso y soporte de los periféricos, se escribió una documentación detallada de cada clase con todos sus métodos, escribiendo también uno o más ejemplos del uso de algunos métodos en particular.
+Para acompañar a los proyectos de ejemplo y dar una base sólida del uso y soporte de los periféricos, se escribió una documentación detallada de cada clase, contando con una descripción de cada uno de los métodos que la componen y con ejemplos de sus usos.
 
-Esta documentación se escribió en la página del proyecto CIAA, en la sección Python \cite{bibpython}, la cual también es de acceso público, cumpliendo así con uno de los requerimientos mencionados en el capítulo \ref{Chapter2}. El link a esta página se encuentra accesible desde la ventana de Snippets del IDE.
+Esta documentación se publicó en el sitio web del proyecto CIAA, en la sección Python \cite{bibpython}, la cual también es de acceso público, cumpliendo así con uno de los requerimientos mencionados en el capítulo \ref{Chapter2}. El link a esta página se encuentra accesible desde la ventana de Snippets del IDE.
 
 
 

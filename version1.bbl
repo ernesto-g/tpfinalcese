@@ -335,5 +335,26 @@
     \verb https://micropython.org
     \endverb
   \endentry
+
+  \entry{wikiscratch}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{MIT}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M3}
+    \strng{fullhash}{M3}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Disponible: 2016-10-20}
+    \field{title}{Hardware That Can Connect to Scratch}
+    \verb{url}
+    \verb https://wiki.scratch.mit.edu/wiki/Hardware_That_Can_Connect_to_Scratc
+    \verb h
+    \endverb
+  \endentry
 \endsortlist
 \endinput
