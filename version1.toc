@@ -39,4 +39,6 @@
 \contentsline {section}{\numberline {A.2}Incorporaci\IeC {\'o}n de una clase al m\IeC {\'o}dulo}{40}{section.311}
 \contentsline {section}{\numberline {A.3}Definici\IeC {\'o}n del constructor de una clase}{42}{section.335}
 \contentsline {section}{\numberline {A.4}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{43}{section.367}
-\contentsline {chapter}{Bibliograf\'{\i }a}{45}{appendix*.374}
+\contentsline {chapter}{\numberline {B}M\IeC {\'o}dulos frozen}{45}{appendix.374}
+\contentsline {section}{\numberline {B.1}C\IeC {\'o}digo Python como parte del firmware}{45}{section.375}
+\contentsline {chapter}{Bibliograf\'{\i }a}{47}{appendix*.376}

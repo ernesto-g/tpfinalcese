@@ -1,0 +1,15 @@
+% Appendix B
+
+\chapter{Módulos frozen} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\section{Código Python como parte del firmware}
+
+El intérprete de python que posee el firmware ejecuta el código python que se encuentra grabado en el filesystem implementado en la memoria de programa del microcontrolador, de esta misma forma es posible ejecutar código python desde un array de texto definido en el código de C que se compila para generar el firmware. El intérprete solo necesita un puntero a donde comienza el texto con el código python, ya sea en memoria RAM o flash.
+
+Gracias a esta particularidad, el archivo Makefile invoca la ejecución de un script escrito en Python llamado “make-frozen.py” el cual se encuentra dentro de la carpeta “tools”. Este script recibe como argumento un directorio y busca dentro del mismo todos los archivos de extensión “.py” y a partir del contenido de estos archivos, genera un array de código C. El nombre de cada archivo se convierte el un módulo Python, y las clases definidas dentro de cada archivo, quedarán incorporadas dentro de dicho módulo.
+
+El directorio de donde el script busca archivos .py es llamado “Frozen” en él se incluyó, por ejemplo, el archivo “unittest.py” en donde se definió la clase “TestCase” explicada en el capítulo \ref{Chapter4}.
+
+
