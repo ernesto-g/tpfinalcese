@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  15 NOV 2016 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  15 NOV 2016 23:27
 entering extended mode
 **./version1.tex
 (version1.tex
@@ -3049,41 +3049,57 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 15.
 
-Overfull \hbox (62.29868pt too wide) in paragraph at lines 19--19
+Overfull \hbox (62.29868pt too wide) in paragraph at lines 21--21
 [][][]\T1/ppl/m/n/9 URL: http://www.proyecto-ciaa.com.ar/devwiki/doku.php?id=educacion:cursos:cursos_programacion_ciaa| 
 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 29.
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 32.
 [35
 
 
 
-])
+]
+LaTeX Info: Redefining \sptext on input line 50.
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 50.
+ [36])
 LaTeX Info: Redefining \sptext on input line 255.
 LaTeX Info: Redefining \. on input line 255.
 LaTeX Info: Redefining \% on input line 255.
@@ -3099,10 +3115,27 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 255.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 255.
- [36]
+ [37]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (Appendices/AppendixA.tex
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 3.
+ [38
+
+
+
+]
 Ap\'{e}ndice A.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 3.
@@ -3151,11 +3184,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 37.
-[37
-
-
-
-]
+[39]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 77.
 Package babel Info: Redefining spanish shorthand >>
@@ -3193,7 +3222,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 82.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 82.
-[38]
+[40]
 Overfull \hbox (40.28647pt too wide) in paragraph at lines 129--135
 \T1/ppl/m/n/10.95 se eje-cu-ta-rá la fun-ción pyb_led_on() a la cual ha-ce re-fe-ren-cia la struct pyb_led_on_obj. 
  []
@@ -3213,7 +3242,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 137.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 137.
-[39]
+[41]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 146.
 Package babel Info: Redefining spanish shorthand >>
@@ -3241,7 +3270,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 176.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 176.
- [40]
+ [42]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 194.
 Package babel Info: Redefining spanish shorthand >>
@@ -3270,7 +3299,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 266.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 266.
- [41]
+ [43]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 275.
 Package babel Info: Redefining spanish shorthand >>
@@ -3283,7 +3312,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 275.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 275.
- [42
+ [44
 
 
 ]
@@ -3313,7 +3342,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 275.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 275.
-[43]
+[45]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
 LaTeX Info: Redefining \sptext on input line 279.
 LaTeX Info: Redefining \. on input line 279.
@@ -3330,7 +3359,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 279.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 279.
- [44]
+ [46]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
  (version1.aux
 LaTeX Info: Redefining \sptext on input line 31.
@@ -3340,27 +3369,71 @@ LaTeX Info: Redefining \% on input line 31.
 (Chapters/Chapter5.aux) (Appendices/AppendixA.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
-Package rerunfilecheck Info: File `version1.out' has not changed.
-(rerunfilecheck)             Checksum: 9EAB0AA2198A367CB18BB973165A2D5B;9169.
+
+
+Package rerunfilecheck Warning: File `version1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `version1.out':
+(rerunfilecheck)             Before: 9EAB0AA2198A367CB18BB973165A2D5B;9169
+(rerunfilecheck)             After:  2B06876D340499FC5C2EC56B97518641;9169.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'version1.run.xml'.
 \openout1 = `version1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35627 strings out of 493334
- 702617 string characters out of 3139245
+ 35647 strings out of 493334
+ 702867 string characters out of 3139245
  984097 words of memory out of 3000000
  38303 multiletter control sequences out of 15000+200000
  54022 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,78p,10383b,3494s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on version1.pdf (56 pages, 2362657 bytes).
+pdfTeX warning (dest): name{lstlisting.367} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.351} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.335} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.329} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.319} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.311} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.303} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.293} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{lstlisting.279} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.328} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix*.373} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.366} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.334} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.310} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.278} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.277} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.268} has been referenced but does not exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
+palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on version1.pdf (58 pages, 2366549 bytes).
 PDF statistics:
- 1071 PDF objects out of 1200 (max. 8388607)
- 441 named destinations out of 1000 (max. 500000)
+ 1101 PDF objects out of 1200 (max. 8388607)
+ 461 named destinations out of 1000 (max. 500000)
  398 words of extra memory for PDF output out of 10000 (max. 10000000)
 
