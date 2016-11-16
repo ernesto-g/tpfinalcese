@@ -109,7 +109,7 @@ Para asegurar el correcto funcionamiento de las bibliotecas para el manejo de pe
 
 Una vez más teniendo como principal objetivo un consumo reducido de memoria de datos y de programa para la implementación de los tests, no se utilizó ninguna biblioteca de tests unitarios para Python, sino que se escribió una que posea lo mínimo indispensable para la ejecución de los tests, en un módulo llamado unittest. 
 
-Este módulo forma parte de las bibliotecas Python que pueden escribirse directamente en Python y no en C (bloque Frozen, ver sección \ref{sec:firmwareArq}), e incorporarse al firmware y al conjunto de módulos que el usuario puede utilizar para programar Python. El código Python escrito se transforma en un array de C y se incluye como parte del firmware en el momento de la compilación. Esto permite su posterior uso por el intérprete de Python.
+Este módulo forma parte de las bibliotecas Python que pueden escribirse directamente en Python y no en C (bloque Frozen, ver apéndice \ref{AppendixB}), e incorporarse al firmware y al conjunto de módulos que el usuario puede utilizar para programar Python. El código Python escrito se transforma en un array de C y se incluye como parte del firmware en el momento de la compilación. Esto permite su posterior uso por el intérprete de Python.
 
 En esta biblioteca se definió la clase TestCase, una parte de ella puede observarse en el algoritmo \ref{lst:testcase} en donde se muestra la definición de la clase y de los métodos:
 

@@ -10,6 +10,66 @@ El intérprete de python que posee el firmware ejecuta el código python que se 
 
 Gracias a esta particularidad, el archivo Makefile invoca la ejecución de un script escrito en Python llamado “make-frozen.py” el cual se encuentra dentro de la carpeta “tools”. Este script recibe como argumento un directorio y busca dentro del mismo todos los archivos de extensión “.py” y a partir del contenido de estos archivos, genera un array de código C. El nombre de cada archivo se convierte el un módulo Python, y las clases definidas dentro de cada archivo, quedarán incorporadas dentro de dicho módulo.
 
-El directorio de donde el script busca archivos .py es llamado “Frozen” en él se incluyó, por ejemplo, el archivo “unittest.py” en donde se definió la clase “TestCase” explicada en el capítulo \ref{Chapter4}.
+En el algoritmo \ref{lst:frozenarray} se observa el archivo “frozen-files.c” el cual es generado por el script “make-frozen.py” al momento de compilar, en él se destacan tres arrays, uno con los nombres de los módulos (coincidentes con los nombres de los archivos .py), uno con los tamaños de cada contenido de cada archivo, y el último en donde se observa el texto de cada archivo, los cuales corresponden a código Python. 
 
+\begin{lstlisting}[label={lst:frozenarray},caption=Array de texto generado por el script make-frozen.] 
+#include <stdint.h>
+const char mp_frozen_names[] = {
+"ModBus\0"
+"unittest\0"
+"\0"};
 
+const uint32_t mp_frozen_sizes[] = {27421,1821,};
+
+const char mp_frozen_content[] = {
+"import pyb\nimport struct\nimport sys\n\nMODE_RTU   =  ...
+"class TestException(Exception):\n    pass\n\nclass     ...  
+};
+\end{lstlisting}
+
+En este ejemplo existen dos archivos que dan lugar a dos módulos: unittest y ModBus.
+El directorio donde el script busca archivos .py es llamado “frozen” en él se incluyó, por ejemplo, el archivo “unittest.py” en donde se definió la clase “TestCase” explicada en el capítulo \ref{Chapter4}.
+
+\section{Inclusión de casos de test escritos en Python}
+
+Como se detalló en el capítulo \ref{Chapter4}, si se compila el firmware habilitando la ejecución de tests, se incluyen dentro del mismo como código frozen las clases “TestCaseXXX” creadas para probar cada periférico. Esto se logró modificando el archivo Makefile para que setee una variable de entorno llamada MP\_INCLUDE\_TESTS, y modificando el script “make-frozen.py” para que lea dicha variable e incluya los archivos .py que se encuentran dentro de una carpeta llamada “tests” que se creó dentro de la carpeta “frozen”. 
+
+En el algoritmo \ref{lst:frozenarraytests} se muestra el archivo “frozen-files.c” generado por el script “make-frozen.py” cuando se compila con el comando “make test” para habilitar la ejecución de los tests.
+
+\begin{lstlisting}[label={lst:frozenarraytests},caption=Archivo frozen-files.c incluyendo clases de test.] 
+#include <stdint.h>
+const char mp_frozen_names[] = {
+"ModBus\0"
+"unittest\0"
+"testing_TestGPIO\0"
+"testing_TestTimers\0"
+"testing_TestUart\0"
+"testing_TestSwitches\0"
+"testing_TestEEPROM\0"
+"testing_TestLeds\0"
+"testing_TestADC\0"
+"testing_TestRS485\0"
+"testing_MainTest\0"
+"testing_TestDAC\0"
+"\0"};
+const uint32_t mp_frozen_sizes[] = {
+27421,1821,3678,2793,2416,
+1212,2758,1081,981,2462,1492,687,
+};
+const char mp_frozen_content[] = {
+"import pyb\nimport struct\nimport sys\n\nMODE_RTU   ... 
+"class TestException(Exception):\n    pass\n\nclass  ...
+"from unittest import TestCase\nimport pyb\n\nclass  ...
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+"from unittest import TestCase\nimport pyb\n  \nclass...
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+"from unittest import TestCase\nimport pyb\n\nclass  ...
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+"from unittest import TestCase\nfrom testing_TestLeds... 
+"from unittest import TestCase\nimport pyb\n  \nclass... 
+};
+\end{lstlisting}
+
+En este algoritmo se observa que se incluyeron los modulos “testing\_TestXXX” dentro de cada archivo con este nombre se definieron las clases “TestCaseXXX” utilizadas.

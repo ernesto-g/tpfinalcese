@@ -41,4 +41,5 @@
 \contentsline {section}{\numberline {A.4}Definici\IeC {\'o}n de un m\IeC {\'e}todo de una clase}{43}{section.367}
 \contentsline {chapter}{\numberline {B}M\IeC {\'o}dulos frozen}{45}{appendix.374}
 \contentsline {section}{\numberline {B.1}C\IeC {\'o}digo Python como parte del firmware}{45}{section.375}
-\contentsline {chapter}{Bibliograf\'{\i }a}{47}{appendix*.376}
+\contentsline {section}{\numberline {B.2}Inclusi\IeC {\'o}n de casos de test escritos en Python}{46}{section.389}
+\contentsline {chapter}{Bibliograf\'{\i }a}{47}{appendix*.424}
