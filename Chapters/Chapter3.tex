@@ -79,7 +79,7 @@ En Python, las clases se agrupan dentro de módulos. Para poder utilizar una cla
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}
 
-El módulo pyb tiene define en su interior las clases que representan los periféricos del microcontrolador. Una vez incluído el módulo, se pueden utilizar sus clases para crear objetos.
+El módulo pyb tiene en su interior las clases que representan los periféricos del microcontrolador. Una vez incluído el módulo, se pueden utilizar sus clases para crear objetos.
 Por ejemplo, para la creación de un objeto que representa el led 1 de la EDU-CIAA-NXP, se escribe:
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{import pyb}\\
@@ -148,7 +148,7 @@ Como se indica en la figura \ref{fig:calls}, las funciones definidas en esta cap
 La capa uPython HAL, es prácticamente transparente, ya que en la mayoría de los casos no agrega funcionalidades, y simplemente invoca a las funciones de la capa BSP. 
 Sin embargo en algunos casos en donde las funciones definidas en BSP no cubren las características necesarias para ser utilizadas desde Python, se han agregado las características en esta capa.
 
-También se han agregado porciones de código para validación de rangos o para agregar argumentos, como se muestra en el algoritmo \ref{lst:uarthal} en donde se define la función para enviar por el puerto serie.
+También se han agregado porciones de código para validación de rangos o para agregar argumentos, como se muestra en el algoritmo \ref{lst:uarthal} en donde se define la función para enviar datos por el puerto serie.
 
 \begin{lstlisting}[label={lst:uarthal},caption=Función de envío por la UART de la capa uPython HAL] 
 uint32_t mp_hal_rs232_write(uint8_t const * const buffer, 
@@ -254,7 +254,7 @@ El desarrollo de este IDE se basó en el IDE del proyecto EDILE \cite{edile}, y 
 
 %-----------------------------------------------------------------------------------------------------------------------
 
-\subsection{Diseño del IDE} 
+\subsection{Desarrollo del IDE} 
 
 Se modificó el código del proyecto EDILE y se incorporó una barra de botones junto con una nueva opción de menú, llamada “EDU-CIAA”. La incorporación de este nuevo menú fue posible gracias al sistema de plug-ins con el que cuenta en editor base, en la figura \ref{fig:idebuttons} se aprecia el menú agregado así como también los botones que poseen las mismas funcionalidades que las opciones del menú.
 
@@ -285,7 +285,7 @@ En la figura \ref{fig:ideclasses} se ilustran las clases desarrolladas. La clase
 	\item \textbf{ConfigManager}: esta clase se encarga de escribir y leer en un archivo la configuración del IDE (es decir el puerto serie que seleccionó el usuario).
 	\item \textbf{SnippetsParser}: todos los ejemplos que se muestran en la ventana de Snippets, se leen de un archivo XML. Esta clase se encarga de leer dicho archivo y devolver la información para que la ventana la pueda mostrar.	
 	\item \textbf{Protocol}: recibe como dato el puerto serie y la ruta al archivo a transmitir, y se encarga de utilizar la biblioteca XMODEM para enviar el archivo hacia la placa.
-	\item \textbf{XMODEM}: biblioteca que implementa el protocolo \textit{xmodem}\footnote{xmodem: Protocolo simple de transferencia de datos por medio de paquetes de 128bytes creado en 1977.} y permite el envío del archivo a la placa.	
+	\item \textbf{XMODEM}: biblioteca que implementa el protocolo \textit{xmodem}\footnote{xmodem: Protocolo simple de transferencia de datos por medio de paquetes de 128bytes.} y permite el envío del archivo a la placa.	
 \end{itemize}
 
 El diseño de las ventanas y sus contenidos fueron creados con el programa Glade \cite{glade} utilizado para crear ventanas para la biblioteca gráfica pyGTK.
@@ -346,7 +346,7 @@ Cada proyecto es acompañado por un archivo README.md en donde se aclaran las fu
 
 Se desea que la comunidad que utilice esta plataforma para desarrollar trabajos, en escuelas secundarias o universidades, aporte dichos trabajos implementados al repositorio, para que otros estudiantes puedan tomarlos como base para nuevos proyectos o simplemente para aprender de lo desarrollado.
 
-\subsection{Documentación de las bibliotecas implementadas} 
+\subsection{Bibliotecas implementadas} 
 
 Para acompañar a los proyectos de ejemplo y dar una base sólida del uso y soporte de los periféricos, se escribió una documentación detallada de cada clase, contando con una descripción de cada uno de los métodos que la componen y con ejemplos de sus usos.
 

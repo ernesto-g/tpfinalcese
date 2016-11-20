@@ -17,11 +17,11 @@
 \contentsline {subsection}{\numberline {3.1.2}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{14}{subsection.59}
 \contentsline {subsection}{\numberline {3.1.3}Dise\IeC {\~n}o de bibliotecas para el manejo de perif\IeC {\'e}ricos desde el c\IeC {\'o}digo Python}{15}{subsection.78}
 \contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del Software}{17}{section.80}
-\contentsline {subsection}{\numberline {3.2.1}Dise\IeC {\~n}o del IDE}{18}{subsection.82}
+\contentsline {subsection}{\numberline {3.2.1}Desarrollo del IDE}{18}{subsection.82}
 \contentsline {subsection}{\numberline {3.2.2}Env\IeC {\'\i }o del archivo a la placa}{20}{subsection.97}
 \contentsline {section}{\numberline {3.3}Documentaci\IeC {\'o}n}{21}{section.99}
 \contentsline {subsection}{\numberline {3.3.1}Proyectos de ejemplo}{22}{subsection.100}
-\contentsline {subsection}{\numberline {3.3.2}Documentaci\IeC {\'o}n de las bibliotecas implementadas}{22}{subsection.101}
+\contentsline {subsection}{\numberline {3.3.2}Bibliotecas implementadas}{22}{subsection.101}
 \contentsline {chapter}{\numberline {4}Ensayos y Resultados}{23}{chapter.102}
 \contentsline {section}{\numberline {4.1}Tests unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde C}{23}{section.103}
 \contentsline {section}{\numberline {4.2}Test unitarios para bibliotecas para el manejo de perif\IeC {\'e}ricos desde Python}{26}{section.156}

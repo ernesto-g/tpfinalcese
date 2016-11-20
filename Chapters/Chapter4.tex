@@ -262,7 +262,7 @@ Para compilar el firmware habilitando la ejecución de los tests, simplemente se
 
 \textbf{{\fontsize{16}{16}\selectfont \textgreater\textgreater}} \texttt{make test}\\
 
-La variable de entorno “MP\_INCLUDE\_TESTS” sirve para que el script que genera código C a partir del código Python escrito como Frozen, incluya las clases de test escritas en Python, de lo contrario estas clases no se incluyen en el firmware, para minimizar el tamaño de la memoria requerida. Esto es posible ya que los archivos de test se encuentran dentro de una carpeta “testing” dentro de la carpeta “frozen”, la cual es omitida segúl el estado de la variable.
+La variable de entorno “MP\_INCLUDE\_TESTS” sirve para que el script que genera código C a partir del código Python escrito como Frozen (ver apéndice \ref{AppendixB}), incluya las clases de test escritas en Python, de lo contrario estas clases no se incluyen en el firmware, para minimizar el tamaño de la memoria requerida. Esto es posible ya que los archivos de test se encuentran dentro de una carpeta “testing” dentro de la carpeta “frozen”, la cual es omitida segúl el estado de la variable.
 
 \subsection{Requerimientos para la ejecución de los tests.}
 \label{sec:requerimientosEjecucionTests}
@@ -326,14 +326,14 @@ A continuación se detallan los test implementados:
 	\item  \textbf{LoadingWindowTest}: comprueba el envío del archivo con el código Python.
 \end{enumerate}
 
-Si bien la mayoría de los test se realizaron para comprobar el correcto funcionamiento de las ventanas, también existen algunos que comprueban el funcionamiento de clases de bajo nivel, como por ejemplo, la encargada leer el archivo XML con los snippets, o la encargada de leer y guardar la configuración. Al ejecutar los tests se crean múltiples instancias de las ventanas del IDE y el resultado de los tests se emite por la consola.
+Si bien la mayoría de los test se realizaron para comprobar el correcto funcionamiento de las ventanas, también existen algunos que comprueban el funcionamiento de clases de bajo nivel, como por ejemplo, la encargada de leer el archivo XML con los snippets, o la encargada de leer y guardar la configuración. Al ejecutar los tests se crean múltiples instancias de las ventanas del IDE y el resultado de los tests se emite por la consola.
 
 
 
 \section{Tests funcionales}
 \label{sec:testFuncionales}
 
-Para comprobar la integración de todas las funcionalidades testeadas en forma aislada mediante tests unitarios anteriormente descriptos, se agregaron una serie de tests funcionales. Los tests funcionales desarrollados pueden agruparse en dos categorías: aquellos que permiten comprobar el correcto funcionamiento de las clases Python que utilizará el usuario para desarrollar sus aplicaciones sobre la plataforma EDU-CIAA-NXP, y los destinados a chequear el correcto funcionamiento entre las distintas ventanas del IDE.
+Para comprobar la integración de todas las funcionalidades testeadas en forma aislada mediante los tests unitarios anteriormente descriptos, se agregaron una serie de tests funcionales. Los tests funcionales desarrollados pueden agruparse en dos categorías: aquellos que permiten comprobar el correcto funcionamiento de las clases Python que utilizará el usuario para desarrollar sus aplicaciones sobre la plataforma EDU-CIAA-NXP, y los destinados a chequear el correcto funcionamiento entre las distintas ventanas del IDE.
 
 Para escribir estos tests, primero se listaron los requerimientos asignándoles un nombre con la forma R-XX, por ejemplo R-01 o R-02, luego se escribieron los tests funcionales, cada uno cubrió al menos un requerimiento, y se nombraron con la forma TF-XX por ejemplo TF-01 o TF-02. Cada test consiste en una lista de pre-requisitos y una serie de pasos que el usuario debe seguir y que le indican qué hacer, y cual es el resultado esperado para cada paso. Al final del test se aclara qué requisitos cubre el test realizado.
 
