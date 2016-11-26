@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.16)  19 NOV 2016 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.17)  26 NOV 2016 10:03
 entering extended mode
 **./version1.tex
 (version1.tex
@@ -3453,7 +3453,7 @@ Package logreq Info: Writing requests to 'version1.run.xml'.
 Here is how much of TeX's memory you used:
  35715 strings out of 493334
  703881 string characters out of 3139245
- 988719 words of memory out of 3000000
+ 988711 words of memory out of 3000000
  38329 multiletter control sequences out of 15000+200000
  54022 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3462,7 +3462,7 @@ Here is how much of TeX's memory you used:
 cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on version1.pdf (60 pages, 2382045 bytes).
+Output written on version1.pdf (60 pages, 2382047 bytes).
 PDF statistics:
  1167 PDF objects out of 1200 (max. 8388607)
  496 named destinations out of 1000 (max. 500000)

@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1239
-NormalPos.bottom=447
+NormalPos.right=1422
+NormalPos.bottom=562
 Class=LaTeXView
 Document=version1.tex
 
 [Frame0_View0,0]
-TopLine=206
-Cursor=9547
+TopLine=91
+Cursor=4264
 
 [Frame1]
 Flags=0
@@ -29,8 +29,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1239
-NormalPos.bottom=447
+NormalPos.right=1422
+NormalPos.bottom=562
 Class=LaTeXView
 Document=Appendices\AppendixB.tex
 
@@ -47,13 +47,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1239
-NormalPos.bottom=447
+NormalPos.right=1422
+NormalPos.bottom=562
 Class=LaTeXView
 Document=Chapters\Chapter3.tex
 
 [Frame2_View0,0]
-TopLine=351
+TopLine=401
 Cursor=22020
 
 [Frame3]
@@ -65,13 +65,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1239
-NormalPos.bottom=447
+NormalPos.right=1422
+NormalPos.bottom=562
 Class=LaTeXView
 Document=Chapters\Chapter4.tex
 
 [Frame3_View0,0]
-TopLine=411
+TopLine=453
 Cursor=21936
 
 [Frame4]
@@ -83,16 +83,16 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1239
-NormalPos.bottom=447
+NormalPos.right=1422
+NormalPos.bottom=562
 Class=LaTeXView
 Document=Chapters\Chapter5.tex
 
 [Frame4_View0,0]
-TopLine=46
+TopLine=30
 Cursor=4039
 
 [SessionInfo]
 FrameCount=5
-ActiveFrame=3
+ActiveFrame=0
 
